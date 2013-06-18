@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails belvederedesign: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="ea5790e2-b38f-4960-9e5a-86903de73136">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+    <libraries/>
+  </data-source>
+</component>
