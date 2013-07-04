@@ -1,6 +1,7 @@
 Belvederedesign::Application.routes.draw do
-  get "main/home"
-
+  match 'main' => 'main#home', :via => :get
+  match 'admin' => 'admin#home', :via => :get
+  root :to => 'main#home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -49,8 +50,8 @@ Belvederedesign::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  # just remember to delete public/home.html.
+  # root :to => 'welcome#home'
 
   # See how all your routes lay out with "rake routes"
 
