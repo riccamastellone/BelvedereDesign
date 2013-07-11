@@ -4,6 +4,8 @@ class MainController < ApplicationController
   end
 
   def azienda
+  end
 
+  def partners
   end
 end
