@@ -14,5 +14,7 @@
 /log/*.log
 /tmp
 
-.idea/*
-*/.idea/*
+
+/.idea/*
+.idea/workspace.xml
+.idea/belvederedesign.iml
