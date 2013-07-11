@@ -1,0 +1,11 @@
+<h1>Admministrazione Notizie ed Eventi</h1>
+<%= link_to "Nuova notizia o evento", [:new_admin_news]%>
+
+<% @news.each do |notizia| %>
+    <div>
+      <h4><%= notizia.title %> [<%=  link_to 'Modifica','/admin/news/' + notizia.id.to_s + '/edit'   %>]  [<%= link_to 'Elimina', '/admin/news/' + notizia.id.to_s,
+                                                                                                                       method: :delete, data: { confirm: 'Confermi l\'eliminazione?' } %>]</h4>
+      <p><%= notizia.text %></p>
+
+    </div>
+<% end %>

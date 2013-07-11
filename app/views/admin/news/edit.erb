@@ -1,0 +1,30 @@
+<h1>Nuova Notizia o Evento</h1>
+
+
+<%= form_for :news, url: "/admin/news/" + @news.id.to_s, method: :put do |f| %>
+    <% if @news.errors.any? %>
+        <div id="errorExplanation">
+          <h2><%= pluralize(@news.errors.count, "error") %> prohibited
+            this post from being saved:</h2>
+          <ul>
+            <% @news.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.label :text %><br>
+      <%= f.text_area :text %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+<%= link_to 'Indietro', '/admin/news' %>

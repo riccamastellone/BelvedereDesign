@@ -1,12 +1,25 @@
 Belvederedesign::Application.routes.draw do
 
-  root :to => 'main#home'
+  get "news_events/index"
+
+  namespace :admin do
+    root to: "admin#index"
+  end
+
+  root to: "main#home"
+
+
+  namespace :admin do
+    resources :news
+  end
+  resources :news_events, only: [:index, :show]
+
+
 
 
   match 'main' => 'main#home', :via => :get
   match 'l-azienda' => 'main#azienda', :via => :get
   match 'partners' => 'main#partners', :via => :get
-  match 'admin' => 'admin#home', :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,10 @@
+<h1>News & Eventi</h1>
+
+
+<% @news.each do |notizia| %>
+    <div>
+      <h4><%= notizia.title %></h4>
+      <p><%= notizia.text %></p>
+
+    </div>
+<% end %>
