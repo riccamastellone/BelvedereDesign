@@ -6,4 +6,6 @@ class ApplicationController < ActionController::Base
       user_name == 'admin' && password == 'admin' #password sicure!
     end
   end
+
+
 end
