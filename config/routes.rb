@@ -1,6 +1,5 @@
 Belvederedesign::Application.routes.draw do
 
-  get "news_events/index"
 
   namespace :admin do
     root to: "admin#index"
@@ -11,6 +10,7 @@ Belvederedesign::Application.routes.draw do
 
   namespace :admin do
     resources :news
+    resources :designer
   end
   resources :news_events, only: [:index, :show]
 
