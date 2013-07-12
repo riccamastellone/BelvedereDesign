@@ -32,6 +32,7 @@ function correggiAltezza() {
 }
 
 function showDesigner(id) {
+    $('#loader').fadeIn("fast");
     $.get("/designers/ajax/" + id,
         function(data) {
             $('.designers .container').css('background-image','url(' + data.immagine + ')');
@@ -40,5 +41,6 @@ function showDesigner(id) {
             $('.designers .secondcolumn').fadeIn();
             $('.designers .secondcolumn').html("<h2>" + data.nome + "</h2>");
             $('.designers .secondcolumn').append("<p>" + data.descrizione + "</p>");
+            $('#loader').fadeOut();
         }, "json");
 }
