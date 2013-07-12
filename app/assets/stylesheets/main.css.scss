@@ -116,3 +116,22 @@ h4 {
 
 /** news **/
 .news-block div {margin-bottom: 40px;}
+
+/** contatti **/
+.contatti-block {
+  overflow: auto;
+}
+.contatti-block div {
+  float:left;
+}
+.contatti-block .destra {
+  width: 70%;
+}
+.contatti-block .sinistra {
+  width: 30%;
+}
+.contatti-block iframe {
+  border: 0;
+  width: 95%;
+  height: 360px;
+}

@@ -20,7 +20,7 @@ Belvederedesign::Application.routes.draw do
   match 'main' => 'main#home', :via => :get
   match 'l-azienda' => 'main#azienda', :via => :get
   match 'partners' => 'main#partners', :via => :get
-
+  match 'contatti' => 'main#contatti', :via => :get
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
