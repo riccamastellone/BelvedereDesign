@@ -10,4 +10,7 @@ class MainController < ApplicationController
 
   def contatti
   end
+
+  def servizi
+  end
 end

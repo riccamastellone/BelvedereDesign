@@ -99,13 +99,17 @@ footer {
   padding: 20px 30px;
 }
 
-h1 {
+h1,h2 {
    text-transform: uppercase;
    font-weight: lighter;
  }
 
 h4 {
   text-transform: uppercase;
+}
+
+.padding {
+  padding-left: 15px;
 }
 
 /** partners **/
