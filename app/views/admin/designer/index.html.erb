@@ -1,2 +1,17 @@
-<h1>Admin::Designer#index</h1>
-<p>Find me in app/views/admin/designer/index.html.erb</p>
+<h1>Admministrazione Designer</h1>
+<%= link_to "Nuovo Designer", [:new_admin_designer], :class=>"btn" %>
+
+<% @designer.each do |des| %>
+    <div>
+      <h4><%= des.title %>
+        <%= link_to '/admin/news/' + des.id.to_s + '/edit', :class=>"btn" do %>
+            <i class="icon-pencil"></i> Modifica
+        <% end %>
+        <%= link_to '/admin/news/' + des.id.to_s, method: :delete, data: { confirm: 'Confermi l\'eliminazione?' }, :class=>"btn" do %>
+            <i class="icon-remove"></i> Elimina
+        <% end %>
+      </h4>
+      <p><%= des.text %></p>
+
+    </div>
+<% end %>

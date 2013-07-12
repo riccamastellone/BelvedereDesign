@@ -1,0 +1,29 @@
+<h1>Nuovo Designer</h1>
+
+<%= form_for :designer, url: '/admin/designer' do |f| %>
+    <div class="row">
+    <div class="span7">
+      <p>
+        <%= f.label :Nome %><br>
+        <%= f.text_field :name,  :class=>'input-block-level' %>
+      </p>
+
+    </div>
+    <div class="span3">
+      <p>
+        <%= f.label :Immagine %><br>
+        <%= file_field(:designer, :image_url, accept: 'image/png,image/gif,image/jpeg') %></p>
+      <p>
+    </div>
+    </div>
+
+    <p>
+      <%= f.label :Descrizione %><br>
+      <%= f.text_area :description, :style=>'width:100%' %>
+    </p>
+
+      <%= f.submit  'Salva', :class => 'btn btn-primary' %>
+      <%= link_to 'Indietro', '/admin/news', :class => 'btn' %>
+    </p>
+<% end %>
+
