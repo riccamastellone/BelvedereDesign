@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>Belvederedesign</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag  "normalize", "main"   %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
       <header>
-        <h1><a href="/">BELVEDERE DESIGN</a></h1>
+        <h1 class="logo"><a href="/"><img src="<%= asset_path 'logo.png' %>"></a></h1>
         <nav>
           <ul>
             <li><a href="/get-inspired">Get Inspired</a></li>
@@ -22,10 +22,12 @@
           </ul>
         </nav>
       </header>
+       <div class="container">
+         <%= yield %>
+       </div>
 
-<%= yield %>
           <footer>
-            <p>(c) 2013 Belvedere Design | Via Marsala 3, 20121 Milano (MI) Italia | T +39 023456432 F +39 025462348 customer.service@belvedere.it | p.iva 00154567345 | privacy | contatti</p>
+            <p>(c) 2013 Belvedere Design | Via Marsala 3, 20121 Milano (MI) Italia | T +39 023456432 F +39 025462348 customer.service@belvedere.it | p.iva 00154567345 | <a href="#">privacy</a> | <a href="#">contatti</a></p>
           </footer>
 </body>
 </html>
