@@ -2,21 +2,43 @@
 <html>
 <head>
   <title>Belvederedesign Admin</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "admin" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <header>
-  <h1><a href="/admin">Pannello Admin</a></h1>
-  <nav>
-    <ul>
-      <li><a href="/admin/news">Gestione News & Eventi</a></li>
-    </ul>
-  </nav>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="/admin">Admin Panel</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="">
+              <a href="/admin/news/">Gestione News&Eventi</a>
+            </li>
+            <li class="">
+              <a href="/admin/designers/">Gestione Designers</a>
+            </li>
+            <li class="">
+              <a href="./scaffolding.html">Scaffolding</a>
+            </li>
+            <li class="">
+              <a href="./base-css.html">Base CSS</a>
+            </li>
+            <li>
+              <a href="./components.html">Components</a>
+            </li>
+            <li class="">
+              <a href="./javascript.html">JavaScript</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
-
+<div class="container">
 <%= yield %>
-
+</div>
 </body>
 </html>
