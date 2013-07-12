@@ -1,7 +1,7 @@
-class Admin::DesignerController < AdminController
+class Admin::DesignerController < Admin::AdminController
   layout "adminlayout"
   def index
-    @designer = Designer.All
+    @designer = Designer.all
   end
   def new
   end
@@ -10,8 +10,12 @@ class Admin::DesignerController < AdminController
   end
   def update
     @designer= Designer.find(params[:id])
-    @designer.title =  params[:news]["title"]
-    @designer.text =  params[:news]["text"]
+    @designer.name =  params[:designer]["name"]
+    @designer.description =  params[:designer]["description"]
+    if !params[:immagine].blank?
+      Designer.saveimg(params[:immagine])
+      @designer.image_url = params[:immagine]['image'].original_filename.to_s
+    end
     @designer.save
     redirect_to '/admin/designer/' + @designer.id.to_s
   end
@@ -19,11 +23,11 @@ class Admin::DesignerController < AdminController
     @designer = Designer.find(params[:id])
   end
   def create
+    Designer.saveimg(params[:immagine])
+    params[:designer]['image_url'] = params[:immagine]['image'].original_filename.to_s
     @designer = Designer.new(params[:designer])
-    @designer.doupload(params[:designer])
-
-    #@designer.save
-    #redirect_to '/admin/designer/' + @designer.id.to_s
+    @designer.save
+    redirect_to '/admin/designer/' + @designer.id.to_s
   end
   def destroy
     @designer = Designer.find(params[:id])

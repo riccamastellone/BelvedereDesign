@@ -5,5 +5,5 @@
 
 <p>
   <strong>Testo:</strong>
-  <p><%= @news.text %><p>
+  <p><%= nl2br(@news.text).html_safe %><p>
 </p>

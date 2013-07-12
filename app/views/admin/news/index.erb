@@ -11,7 +11,7 @@
                     <i class="icon-remove"></i> Elimina
                  <% end %>
       </h4>
-      <p><%= notizia.text %></p>
+      <p><%= nl2br(notizia.text).html_safe %></p>
 
     </div>
 <% end %>

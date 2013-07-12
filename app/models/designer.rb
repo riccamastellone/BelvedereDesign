@@ -4,13 +4,13 @@ class Designer < ActiveRecord::Base
   attr_accessible  :name, :description, :image_url
 
 
-  def doupload(upload)
-    name =  upload['image_url']
+  def self.saveimg(upload)
+    name =  upload['image'].original_filename
     directory = "public/data"
     # create the file path
     path = File.join(directory, name)
     # write the file
-    File.open(path, "wb") { |f| f.write(upload['image_url']) }
+    File.open(path, "wb") { |f| f.write(upload['image'].read) }
   end
 
 end

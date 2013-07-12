@@ -2,16 +2,17 @@
 <%= link_to "Nuovo Designer", [:new_admin_designer], :class=>"btn" %>
 
 <% @designer.each do |des| %>
-    <div>
-      <h4><%= des.title %>
-        <%= link_to '/admin/news/' + des.id.to_s + '/edit', :class=>"btn" do %>
+    <div style="clear:both; margin-top: 30px;overflow: auto">
+      <h4><%= des.name %>
+        <%= link_to '/admin/designer/' + des.id.to_s + '/edit', :class=>"btn" do %>
             <i class="icon-pencil"></i> Modifica
         <% end %>
-        <%= link_to '/admin/news/' + des.id.to_s, method: :delete, data: { confirm: 'Confermi l\'eliminazione?' }, :class=>"btn" do %>
+        <%= link_to '/admin/designer/' + des.id.to_s, method: :delete, data: { confirm: 'Confermi l\'eliminazione?' }, :class=>"btn" do %>
             <i class="icon-remove"></i> Elimina
         <% end %>
       </h4>
-      <p><%= des.text %></p>
+      <%= image_tag("/data/#{des.image_url}", style: "float:left; max-width:200px; padding: 0 15px 10px 0;") %>
+      <p><%= nl2br(des.description).html_safe %></p>
 
     </div>
 <% end %>

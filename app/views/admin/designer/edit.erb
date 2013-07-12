@@ -1,0 +1,44 @@
+<h1>Modifica Designer</h1>
+
+
+<%= form_for :designer, url: "/admin/designer/" + @designer.id.to_s, method: :put, :html => {:multipart => true} do |f| %>
+    <% if @designer.errors.any? %>
+        <div id="errorExplanation">
+          <h2><%= pluralize(@designer.errors.count, "error") %> prohibited
+            this post from being saved:</h2>
+          <ul>
+            <% @designer.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="row">
+      <div class="span7">
+        <p>
+          <%= f.label :Nome %><br>
+          <%= f.text_field :name,  :class=>'input-block-level' %>
+        </p>
+
+      </div>
+      <div class="span3">
+        <p>
+          <%= f.label :Immagine %><br>
+          <%= file_field(:immagine, :image, accept: 'image/png,image/gif,image/jpeg') %></p>
+        <p>
+      </div>
+    </div>
+
+
+
+    <p>
+      <%= f.label :Descrizione %><br>
+      <%= f.text_area :description, :style=>'width:100%' %>
+    </p>
+
+    <p>
+      <%= f.submit  'Salva', :class => 'btn btn-primary' %>
+      <%= link_to 'Indietro', '/admin/designer', :class => 'btn' %>
+    </p>
+<% end %>
+<%= link_to 'Indietro', '/admin/designer' %>

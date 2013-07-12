@@ -1,4 +1,4 @@
-class Admin::NewsController < AdminController
+class Admin::NewsController < Admin::AdminController
   layout "adminlayout"
   def index
     @news = News.all

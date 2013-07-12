@@ -4,7 +4,7 @@
 <% @news.each do |notizia| %>
     <div>
       <h4><%= notizia.title %></h4>
-      <p><%= notizia.text %></p>
+      <p><%= nl2br(notizia.text).html_safe %></p>
 
     </div>
 <% end %>
