@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= @classecorpo %>">
       <header>
         <h1 class="logo"><a href="/"><img src="<%= asset_path 'logo.png' %>"></a></h1>
         <nav>

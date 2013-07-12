@@ -12,3 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+$(function() {
+    correggiAltezza();
+});
+$(window).resize(function() {
+    correggiAltezza();
+});
+function correggiAltezza() {
+    if($('.designers .container').size() > 0) {
+        if($('.designers .firstcolumn').height() < ($(window).height()-(44+183))) {
+            $('.designers .container').height(($(window).height()-(44+183)));
+            $('.designers .firstcolumn').height($(window).height()-(44+183));
+        }
+
+    }
+}
+

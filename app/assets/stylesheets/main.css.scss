@@ -77,8 +77,11 @@ header {
   background-position: bottom right;
   background-repeat: no-repeat;
   border-bottom: 1px solid $testo;
-  position: relative;
-  bottom: 21px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+
 }
 
 /*** footer */
@@ -94,8 +97,7 @@ footer {
 
 /** content & general **/
 .container {
-  position: relative;
-  bottom: 21px;
+  margin-top: 183px;
   padding: 20px 30px;
 }
 
@@ -106,6 +108,13 @@ h1,h2 {
 
 h4 {
   text-transform: uppercase;
+}
+
+h5 {
+  font-weight: lighter;
+  font-size: 1.05em;
+  letter-spacing: 1px;
+  margin: 10px 0;
 }
 
 .padding {
@@ -138,4 +147,22 @@ h4 {
   border: 0;
   width: 95%;
   height: 360px;
+}
+
+/** colonne */
+.column {
+  padding: 20px;
+  background: $contentbg;
+}
+.firstcolumn {
+  width:500px;
+}
+
+
+/** designer */
+.designers .container {
+  background-image: url(/assets/bg_designer.jpg);
+  background-attachment: fixed;
+  padding: 0;
+  background-size: cover;
 }

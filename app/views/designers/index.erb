@@ -1,0 +1,14 @@
+<div class="3columns columns">
+   <div class="firstcolumn column">
+     <h1>I Nostri Designer</h1>
+     <% @designer.each do |des| %>
+         <h5><a href="/designers/<%= des.id.to_s %>"><%= des.name %></a></h5>
+     <% end %>
+
+   </div>
+  <div class="secondthirdcolumn">
+
+  </div>
+
+
+</div>

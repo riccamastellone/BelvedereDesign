@@ -13,7 +13,7 @@ Belvederedesign::Application.routes.draw do
     resources :designer
   end
   resources :news_events, only: [:index, :show]
-
+  resources :designers, only: [:index, :show]
 
 
 
