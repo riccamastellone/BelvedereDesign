@@ -23,8 +23,22 @@ function correggiAltezza() {
         if($('.designers .firstcolumn').height() < ($(window).height()-(44+183))) {
             $('.designers .container').height(($(window).height()-(44+183)));
             $('.designers .firstcolumn').height($(window).height()-(44+183));
+            if($('.designers .secondcolumn').size()>0) {
+                $('.designers .secondcolumn').height($(window).height()-(44+183));
+            }
         }
 
     }
 }
 
+function showDesigner(id) {
+    $.get("/designers/ajax/" + id,
+        function(data) {
+            $('.designers .container').css('background-image','url(' + data.immagine + ')');
+            $('.designers .container').css('background-position','right');
+            $('.designers .container').css('background-size','auto');
+            $('.designers .secondcolumn').fadeIn();
+            $('.designers .secondcolumn').html("<h2>" + data.nome + "</h2>");
+            $('.designers .secondcolumn').append("<p>" + data.descrizione + "</p>");
+        }, "json");
+}

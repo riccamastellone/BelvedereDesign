@@ -153,8 +153,10 @@ h5 {
 .column {
   padding: 20px;
   background: $contentbg;
+  float: left;
+  border-left: 1px solid $testo;
 }
-.firstcolumn {
+.firstcolumn, .secondcolumn {
   width:500px;
 }
 
@@ -165,4 +167,9 @@ h5 {
   background-attachment: fixed;
   padding: 0;
   background-size: cover;
+  background-repeat:no-repeat;
+}
+
+.designers .secondcolumn {
+  display: none;
 }

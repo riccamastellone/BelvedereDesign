@@ -1,10 +1,10 @@
 <p>
-  <strong>Titolo:</strong>
+  <strong>Nome:</strong>
   <p><%= @designer.name %></p>
 </p>
 
 <p>
-  <strong>Testo:</strong>
+  <strong>Descrizione:</strong>
   <p><%= nl2br(@designer.description).html_safe %><p>
 </p>
 <%= image_tag("/data/#{@designer.image_url}") %>
