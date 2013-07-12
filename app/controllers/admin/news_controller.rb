@@ -1,5 +1,10 @@
 class Admin::NewsController < Admin::AdminController
   layout "adminlayout"
+  before_filter :set_constants
+  def set_constants
+    @newseventi = "active"
+  end
+
   def index
     @news = News.all
   end

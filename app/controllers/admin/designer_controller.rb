@@ -1,5 +1,12 @@
 class Admin::DesignerController < Admin::AdminController
+
   layout "adminlayout"
+
+  before_filter :set_constants
+  def set_constants
+    @designersgestione = "active"
+  end
+
   def index
     @designer = Designer.all
   end
