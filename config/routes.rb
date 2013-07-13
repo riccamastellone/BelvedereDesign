@@ -15,7 +15,7 @@ Belvederedesign::Application.routes.draw do
   end
   resources :news_events, only: [:index, :show]
   resources :designers, only: [:index]
-  resources :product,  only: [:index]
+  resources :product,  only: [:index, :show]
 
   get '/admin/products/:id/editimages', to: 'admin::products#editimages'
   post '/admin/products/:id/addimg', to: 'admin::products#addimg'

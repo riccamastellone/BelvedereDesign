@@ -90,7 +90,7 @@ function showCategoryList(id) {
             colonna.fadeIn();
             console.log(data)
             for (var el in data) {
-                colonna.append("<h5><a href='#'>" + data[el].name + "</a></h5>");
+                colonna.append("<h5><a href='/product/" + data[el].id + "'>" + data[el].name + "</a></h5>");
             }
             }
             $('#loader').fadeOut();

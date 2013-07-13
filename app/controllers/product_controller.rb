@@ -31,4 +31,9 @@ class ProductController < ApplicationController
 
     render :text => JSON.generate(@prodottiContainer.as_json).html_safe
   end
+
+
+  def show
+
+  end
 end
