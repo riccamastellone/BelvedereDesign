@@ -51,12 +51,7 @@ function showDesigner(id) {
             colonna.append("<h3>Prodotti disegnati</h3>");
 
             for (var el in data.prodotti) {
-                var html = "<div>";
-                html += "<h5>" +  data.prodotti[el].prodotto.name + "</h5>";
-                for (var imm in data.prodotti[el].immagini) {
-                    html += "<p>" + data.prodotti[el].immagini[imm].image_url + "</p>";
-                }
-                html += "</div>";
+                var html = "<a href=\"#\"><img class=\"minuatura-prodotto\" src=\"/data/prodotti/" + data.prodotti[el].immagini[0].image_url + "\" title=\"" +  data.prodotti[el].prodotto.name + "\"></a>";
                 colonna.append(html);
             }
             }
