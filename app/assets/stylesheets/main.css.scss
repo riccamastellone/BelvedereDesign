@@ -188,3 +188,16 @@ h5 {
   float:left;
   border: 3px solid $testo;
 }
+
+/** prodotti */
+.prodotti .container {
+  background-image: url(/assets/bg_prodotti.jpg);
+  background-attachment: fixed;
+  padding: 0;
+  background-size: cover;
+  background-repeat:no-repeat;
+}
+
+.prodotti .secondcolumn {
+  display: none;
+}

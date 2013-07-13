@@ -1,2 +1,11 @@
-<h1>Product#index</h1>
-<p>Find me in app/views/product/index.html.erb</p>
+<div class="3columns columns">
+  <div class="firstcolumn column">
+    <h1>Categorie</h1>
+    <% @categories.each do |cat| %>
+        <h5><a href="javascript:showCategoryList(<%= cat.id.to_s %>)"><%= cat.name %></a></h5>
+    <% end %>
+  </div>
+  <div class="secondcolumn column"></div>
+
+
+</div>

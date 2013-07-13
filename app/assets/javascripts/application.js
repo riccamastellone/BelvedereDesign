@@ -33,6 +33,17 @@ function correggiAltezza() {
         }
 
     }
+
+    if($('.prodotti .container').size() > 0) {
+        if($('.prodotti .firstcolumn').height() < ($(window).height()-(44+183))) {
+            $('.prodotti .container').height(($(window).height()-(44+183)));
+            $('.prodotti .firstcolumn').height($(window).height()-(44+183));
+            if($('.prodotti .secondcolumn').size()>0) {
+                $('.prodotti .secondcolumn').height($(window).height()-(44+183));
+            }
+        }
+
+    }
 }
 
 function showDesigner(id) {
