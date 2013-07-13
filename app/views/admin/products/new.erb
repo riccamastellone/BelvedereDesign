@@ -3,19 +3,22 @@
 
 <%= form_for :product, url: '/admin/products' do |f| %>
     <div class="row">
-      <div class="span7">
+      <div class="span5">
         <p>
-          <%= f.label :Nome %><br>
+          <%= f.label :Nome %>
           <%= f.text_field :name,  :class=>'input-block-level' %>
         </p>
 
       </div>
+
       <div class="span3">
-        <p>
-          <%= f.label :Designer %><br>
-          <%= select_tag(:designer_id, options_from_collection_for_select(Designer.all, :id, :name)) %>
+        <%= f.label :Categoria %>
+        <%= select_tag(:categoria_id, options_from_collection_for_select(Categoria.all, :id, :name)) %>
         </p>
-        <p>
+      </div>
+      <div class="span3">
+        <%= f.label :Designer %>
+        <%= select_tag(:designer_id, options_from_collection_for_select(Designer.all, :id, :name)) %>
       </div>
     </div>
 

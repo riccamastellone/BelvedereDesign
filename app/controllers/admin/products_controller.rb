@@ -26,13 +26,14 @@ class Admin::ProductsController < ApplicationController
     @product.name =  params[:product]["name"]
     @product.description =  params[:product]["description"]
     @product.designer_id =  params["designer_id"]
+    @product.categoria_id =  params["categoria_id"]
     @product.save
     redirect_to '/admin/products/' + @product.id.to_s
   end
   def create
     @product = Product.new(params[:product])
     @product.designer_id =  params["designer_id"]
-
+    @product.categoria_id =  params["categoria_id"]
     @product.save
     redirect_to '/admin/products/' + @product.id.to_s
   end

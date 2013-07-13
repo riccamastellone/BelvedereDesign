@@ -1,28 +1,27 @@
 <h1>Modifica Prodotto</h1>
-
-
+<br>
 <%= form_for :product, url: "/admin/products/" + @product.id.to_s, method: :put do |f| %>
     <div class="row">
-      <div class="span7">
-        <p>
-          <%= f.label :Nome %><br>
+      <div class="span4">
+          <%= f.label :Nome %>
           <%= f.text_field :name,  :class=>'input-block-level' %>
-        </p>
 
       </div>
       <div class="span3">
-        <p>
-          <%= f.label :Designer %><br>
-          <%= select_tag(:designer_id, options_from_collection_for_select(Designer.all, :id, :name)) %>
+          <%= f.label :Categoria %>
+          <%= select_tag(:categoria_id, options_from_collection_for_select(Categoria.all, :id, :name)) %>
           </p>
-        <p>
+      </div>
+      <div class="span3">
+          <%= f.label :Designer %>
+          <%= select_tag(:designer_id, options_from_collection_for_select(Designer.all, :id, :name)) %>
       </div>
     </div>
 
 
 
     <p>
-      <%= f.label :Descrizione %><br>
+      <%= f.label :Descrizione %>
       <%= f.text_area :description, :style=>'width:100%' %>
     </p>
 
@@ -34,6 +33,7 @@
 <%= link_to 'Indietro', '/admin/products' %>
 <script>
     $(function() {
-       $('select').val(<%= @product.designer_id %>)
+        $('select[name=designer_id]').val(<%= @product.designer_id %>)
+        $('select[name=categoria_id]').val(<%= @product.categoria_id %>)
     });
 </script>
