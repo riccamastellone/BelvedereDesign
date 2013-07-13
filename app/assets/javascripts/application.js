@@ -14,9 +14,13 @@
 //= require jquery_ujs
 $(function() {
     correggiAltezza();
+    if(window.location.hash) {
+        showDesigner(parseInt(window.location.hash.substring(1)));
+    }
 });
 $(window).resize(function() {
     correggiAltezza();
+
 });
 function correggiAltezza() {
     if($('.designers .container').size() > 0) {
@@ -33,6 +37,7 @@ function correggiAltezza() {
 
 function showDesigner(id) {
     $('#loader').fadeIn("fast");
+    window.location.hash = id;
     $.get("/designers/ajax/" + id,
         function(data) {
             $('.designers .container').css('background-image','url(' + data.immagine + ')');
@@ -42,5 +47,8 @@ function showDesigner(id) {
             $('.designers .secondcolumn').html("<h2>" + data.nome + "</h2>");
             $('.designers .secondcolumn').append("<p>" + data.descrizione + "</p>");
             $('#loader').fadeOut();
-        }, "json");
+        }, "json").fail(function() {
+            alert("Designer non esistente");
+            $('#loader').fadeOut();
+        });
 }

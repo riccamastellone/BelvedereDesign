@@ -3,6 +3,7 @@ class Designer < ActiveRecord::Base
             length: { minimum: 5 }
   attr_accessible  :name, :description, :image_url
 
+  has_many :products, dependent: :destroy
 
   def self.saveimg(upload)
     name =  upload['image'].original_filename

@@ -1,13 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  id: 
-  title: MyString
+  name: MyString
   description: MyText
-  designer_id: 
 
 two:
-  id: 
-  title: MyString
+  name: MyString
   description: MyText
-  designer_id: 
