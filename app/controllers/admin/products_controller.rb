@@ -29,6 +29,13 @@ class Admin::ProductsController < ApplicationController
     @product.save
     redirect_to '/admin/products/' + @product.id.to_s
   end
+  def create
+    @product = Product.new(params[:product])
+    @product.designer_id =  params["designer_id"]
+
+    @product.save
+    redirect_to '/admin/products/' + @product.id.to_s
+  end
   def destroy
     @product = Product.find(params[:id])
     @product.destroy

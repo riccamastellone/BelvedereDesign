@@ -42,8 +42,8 @@ function showDesigner(id) {
         function(data) {
             var colonna =  $('.designers .secondcolumn');
             $('.designers .container').css('background-image','url(' + data.immagine + ')');
-            $('.designers .container').css('background-position','right');
-            $('.designers .container').css('background-size','auto');
+            $('.designers .container').css('background-position','right center');
+            $('.designers .container').css('background-size','contain');
             colonna.fadeIn();
             colonna.html("<h2>" + data.nome + "</h2>");
             colonna.append("<p>" + data.descrizione + "</p>");
@@ -67,3 +67,7 @@ function showDesigner(id) {
             $('#loader').fadeOut();
         });
 }
+
+
+
+
