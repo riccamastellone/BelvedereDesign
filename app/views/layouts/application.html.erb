@@ -12,7 +12,7 @@
         <nav>
           <ul>
             <li><a href="/get-inspired">Get Inspired</a></li>
-            <li><a href="/prodotti">Prodotti</a></li>
+            <li><a href="/product">Prodotti</a></li>
             <li><a href="/designers">Designers</a></li>
             <li><a href="/showroom">Showroom</a></li>
             <li><a href="/l-azienda">L'Azienda</a></li>
@@ -30,5 +30,12 @@
           <footer>
             <p>(c) 2013 Belvedere Design | Via Marsala 3, 20121 Milano (MI) Italia | T +39 023456432 F +39 025462348 customer.service@belvedere.it | p.iva 00154567345 | <a href="#">privacy</a> | <a href="/contatti">contatti</a></p>
           </footer>
+<% if(@attivo)    %>
+<script>
+    $(function() {
+        $('header nav ul li:nth-child(<%= @attivo %>)').css('text-decoration','underline')
+    });
+<% end %>
+</script>
 </body>
 </html>
