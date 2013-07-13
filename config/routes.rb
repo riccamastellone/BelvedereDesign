@@ -17,7 +17,8 @@ Belvederedesign::Application.routes.draw do
   resources :designers, only: [:index]
 
   get '/admin/products/:id/editimages', to: 'admin::products#editimages'
-
+  post '/admin/products/:id/addimg', to: 'admin::products#addimg'
+  delete '/admin/products/ajaximg/:id', to: 'admin::products#deleteimg'
   get '/designers/ajax/:id', to: 'designers#showajax'
 
   match 'main' => 'main#home', :via => :get

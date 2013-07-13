@@ -28,7 +28,6 @@ class DesignersController < ApplicationController
 
     respond_to do |format|
       format.html { render :layout => false }
-      # other formats
     end
 
 

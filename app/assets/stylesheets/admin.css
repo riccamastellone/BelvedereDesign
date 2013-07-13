@@ -12333,3 +12333,12 @@ a.badge:focus {
     position: fixed;
 }
 header {padding-bottom:60px}
+.existing-image-block {
+    overflow:auto;
+}
+.existing-image-block img {
+    float:left;
+    width:200px;
+    margin:10px;
+    cursor: pointer;
+}

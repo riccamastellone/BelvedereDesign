@@ -2,17 +2,6 @@
 
 
 <%= form_for :designer, url: "/admin/designer/" + @designer.id.to_s, method: :put, :html => {:multipart => true} do |f| %>
-    <% if @designer.errors.any? %>
-        <div id="errorExplanation">
-          <h2><%= pluralize(@designer.errors.count, "error") %> prohibited
-            this post from being saved:</h2>
-          <ul>
-            <% @designer.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
     <div class="row">
       <div class="span7">
         <p>

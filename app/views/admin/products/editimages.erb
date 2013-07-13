@@ -1,0 +1,21 @@
+<h1>Immagini Esistenti</h1>
+<p>Clicca su un'immagine per eliminarla</p>
+<div class="existing-image-block">
+<% @immagini.each do |i|  %>
+   <img src="/data/prodotti/<%= i.image_url %>" data-id="<%= i.id %>">
+<% end %>
+</div>
+
+<h1>Carica Nuove</h1>
+<%= form_for :productimages, url: "/admin/products/" + @productid + '/addimg', :html => {:multipart => true} do |f| %>
+
+        <p>
+          <%= file_field(:immagine, :image,  :multiple => true, accept: 'image/png,image/gif,image/jpeg') %></p>
+        <p>
+
+    <p>
+      <%= f.submit  'Salva', :class => 'btn btn-primary' %>
+      <%= link_to 'Indietro', '/admin/products', :class => 'btn' %>
+    </p>
+<% end %>
+

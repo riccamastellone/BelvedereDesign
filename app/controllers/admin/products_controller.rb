@@ -43,6 +43,21 @@ class Admin::ProductsController < ApplicationController
     redirect_to '/admin/products/'
   end
   def editimages
+    @productid = params[:id]
+    @immagini = ProductImage.where(:product_id => params[:id])
+  end
+  def addimg
+    params[:immagine]['image'].each do |i|
+      @img = ProductImage.new(:image_url => i.original_filename, :product_id => params[:id])
+      ProductImage.saveimg(i)
+      @img.save
 
+    end
+    redirect_to '/admin/products/' + params[:id] + '/editimages'
+  end
+  def deleteimg
+    render :nothing => true
+    @product = ProductImage.find(params[:id])
+    @product.destroy
   end
 end
