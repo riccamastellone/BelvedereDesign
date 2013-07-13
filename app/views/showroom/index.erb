@@ -7,13 +7,14 @@
 
     </div>
   </div>
-  <div class="column filled"></div>
+  <div class="column filled" style="display:none"></div>
 
 
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script>
     $(function() {
+    $('.prodotti .container').css('background-image','url(/assets/bg_showroom.jpg)');
     $('input[type=text]').keyup(function(e) {
         if(e.keyCode == 13) {
             cercaShowroom();
