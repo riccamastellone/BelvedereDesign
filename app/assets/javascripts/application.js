@@ -58,7 +58,7 @@ function showDesigner(id) {
             if(data.prodotti.length > 0) {
             colonna.append("<h3>Prodotti disegnati</h3>");
             for (var el in data.prodotti) {
-                if( data.prodotti[el].immagini[0] != undefined)  {
+                if( data.prodotti[el].immagini[0] != undefined)  {  // Nel caso il prodotto non abbia immagini mostro solo il nome
                     var html = "<a href=\"/product/" + data.prodotti[el].prodotto.id + "\"><img class=\"minuatura-prodotto\" src=\"/data/prodotti/" + data.prodotti[el].immagini[0].image_url + "\" title=\"" +  data.prodotti[el].prodotto.name + "\"></a>";
                 }  else {
                     var html = "<a href=\"/product/" + data.prodotti[el].prodotto.id + "\">" +  data.prodotti[el].prodotto.name + "</a>"
