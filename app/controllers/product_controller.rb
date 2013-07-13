@@ -11,26 +11,24 @@ class ProductController < ApplicationController
   end
 
 
-  def showajax
+  def listajax
 
-    @prodotti = Designer.find(params[:id])
+
+    @prodotti = Product.where(:categoria_id => params[:id])
+    render :text => JSON.generate(@prodotti.as_json).html_safe
+  end
+
+
+  def productajax
 
     @prodottiContainer = Array.new
 
-
-    prodotti = Product.where(:designer_id => @designer.id)
+    prodotti = Product.where(:categoria_id => params[:id])
     prodotti.each do |p|
       immagini = ProductImage.where(:product_id => p.id)
       @prodottiContainer.push('prodotto' => p, "immagini" => immagini)
     end
 
-
-    respond_to do |format|
-      format.html { render :layout => false }
-    end
-
-
-
+    render :text => JSON.generate(@prodottiContainer.as_json).html_safe
   end
-
 end

@@ -77,3 +77,28 @@ function showDesigner(id) {
 
 
 
+function showCategoryList(id) {
+    $('#loader').fadeIn("fast");
+    $.get("/product/ajax/category/" + id,
+        function(data) {
+            var colonna =  $('.prodotti .secondcolumn');
+            colonna.html("<h1>Prodotti</h1>");
+            if(data.length <= 0) {
+                alert("Nessun prodotto per questa categoria");
+                colonna.fadeOut();
+            } else {
+            colonna.fadeIn();
+            console.log(data)
+            for (var el in data) {
+                colonna.append("<h5><a href='#'>" + data[el].name + "</a></h5>");
+            }
+            }
+            $('#loader').fadeOut();
+
+        }, "json").fail(function() {
+            alert("Categoria non esistente");
+            $('#loader').fadeOut();
+            colonna.fadeOut();
+        });
+}
+
