@@ -11,6 +11,8 @@ $(window).resize(function() {
     correggiAltezza();
 
 });
+
+
 function correggiAltezza() {
     if($('.designers .container').size() > 0) {
         if($('.designers .firstcolumn').height() < ($(window).height()-(44+183))) {
@@ -56,7 +58,13 @@ function showDesigner(id) {
             if(data.prodotti.length > 0) {
             colonna.append("<h3>Prodotti disegnati</h3>");
             for (var el in data.prodotti) {
-                var html = "<a href=\"/product/" + data.prodotti[el].prodotto.id + "\"><img class=\"minuatura-prodotto\" src=\"/data/prodotti/" + data.prodotti[el].immagini[0].image_url + "\" title=\"" +  data.prodotti[el].prodotto.name + "\"></a>";
+                if( data.prodotti[el].immagini[0] != undefined)  {
+                    var html = "<a href=\"/product/" + data.prodotti[el].prodotto.id + "\"><img class=\"minuatura-prodotto\" src=\"/data/prodotti/" + data.prodotti[el].immagini[0].image_url + "\" title=\"" +  data.prodotti[el].prodotto.name + "\"></a>";
+                }  else {
+                    var html = "<a href=\"/product/" + data.prodotti[el].prodotto.id + "\">" +  data.prodotti[el].prodotto.name + "</a>"
+                }
+
+
                 colonna.append(html);
                 }
             }
