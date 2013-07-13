@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+categorie = [
+    ["Armadi"],
+    ["Tavoli"],
+    ["Sedie"],
+    ["Divani e Poltrone"],
+    ["Letti"],
+    ["Mobili per Soggiorno"],
+    ["Arredo per Cucina"]
+]
+
+categorie.each do |name|
+  Categoria.create(:name => name)
+end
