@@ -1,1 +1,34 @@
+<script type="text/javascript">
 
+    jQuery(function($){
+        $('.prodotti .container').css("background-image",'none');
+        $.supersized({
+            autoplay				:	0,
+            fit_portrait         	:   0,
+            fit_landscape			:   1,
+            thumbnail_navigation    :   0,
+            slides 					:  	[
+                    <% @immagini.each_with_index do |img,index| %>
+                            {image : '/data/prodotti/<%= img.image_url.html_safe %>'}<% if (index != @immagini.size - 1) %>,<% end %>
+                <% end %>
+            ]
+
+        });
+    });
+
+</script>
+
+
+<div class="navigazione-block">
+  <div class="destra">
+    <img src="/assets/supersized/destra.png">
+  </div>
+  <div class="sinistra">
+    <img src="/assets/supersized/sinistra.png">
+  </div>
+</div>
+
+<div class="product-info">
+  <h2><%= @prodotto.name %> <span class="des-detail">design by <a href="/designers#<%= @designer.id %>"><%= @designer.name %></a></span></h2>
+     <p><%= nl2br(@prodotto.description).html_safe %></p>
+</div>

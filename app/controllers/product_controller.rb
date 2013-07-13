@@ -34,6 +34,13 @@ class ProductController < ApplicationController
 
 
   def show
-
+    begin
+    @prodotto = Product.find(params[:id])
+    @designer = Designer.find(@prodotto.designer_id);
+    @immagini = ProductImage.where(:product_id => params[:id])
+    rescue ActiveRecord::RecordNotFound      #Gestiamo il caso di id non presente
+      redirect_to '/'
+      return
+    end
   end
 end
