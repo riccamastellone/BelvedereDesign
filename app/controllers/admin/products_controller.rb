@@ -42,4 +42,7 @@ class Admin::ProductsController < ApplicationController
 
     redirect_to '/admin/products/'
   end
+  def editimages
+
+  end
 end

@@ -16,6 +16,8 @@ Belvederedesign::Application.routes.draw do
   resources :news_events, only: [:index, :show]
   resources :designers, only: [:index]
 
+  get '/admin/products/:id/editimages', to: 'admin::products#editimages'
+
   get '/designers/ajax/:id', to: 'designers#showajax'
 
   match 'main' => 'main#home', :via => :get

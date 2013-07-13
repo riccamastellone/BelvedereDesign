@@ -10,6 +10,9 @@
         <%= link_to '/admin/products/' + des.id.to_s, method: :delete, data: { confirm: 'Confermi l\'eliminazione?' }, :class=>"btn" do %>
             <i class="icon-remove"></i> Elimina
         <% end %>
+        <%= link_to '/admin/products/' + des.id.to_s + '/editimages',  :class=>"btn" do %>
+            <i class="icon-camera"></i> Gestisci immagini
+        <% end %>
       </h4>
       <%= #image_tag("/data/#{des.image_url}", style: "float:left; max-width:200px; padding: 0 15px 10px 0;")
       %>
