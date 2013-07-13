@@ -20,3 +20,15 @@
 Thumbs.db
 .idea/workspace.xml
 .idea/belvederedesign.iml
+
+.idea/.generators
+
+*.xml
+
+*.xml
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/modules.xml
