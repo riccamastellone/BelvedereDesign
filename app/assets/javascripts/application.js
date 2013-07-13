@@ -40,12 +40,27 @@ function showDesigner(id) {
     window.location.hash = id;
     $.get("/designers/ajax/" + id,
         function(data) {
+            var colonna =  $('.designers .secondcolumn');
             $('.designers .container').css('background-image','url(' + data.immagine + ')');
             $('.designers .container').css('background-position','right');
             $('.designers .container').css('background-size','auto');
-            $('.designers .secondcolumn').fadeIn();
-            $('.designers .secondcolumn').html("<h2>" + data.nome + "</h2>");
-            $('.designers .secondcolumn').append("<p>" + data.descrizione + "</p>");
+            colonna.fadeIn();
+            colonna.html("<h2>" + data.nome + "</h2>");
+            colonna.append("<p>" + data.descrizione + "</p>");
+            if(data.prodotti.length > 0) {
+            colonna.append("<h3>Prodotti disegnati</h3>");
+
+            for (var el in data.prodotti) {
+                var html = "<div>";
+                html += "<h5>" +  data.prodotti[el].prodotto.name + "</h5>";
+                for (var imm in data.prodotti[el].immagini) {
+                    html += "<p>" + data.prodotti[el].immagini[imm].image_url + "</p>";
+                }
+                html += "</div>";
+                colonna.append(html);
+            }
+            }
+
             $('#loader').fadeOut();
         }, "json").fail(function() {
             alert("Designer non esistente");

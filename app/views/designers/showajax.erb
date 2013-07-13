@@ -1,1 +1,7 @@
-<%=  JSON.generate("nome" => @designer.name, "descrizione" => nl2br(@designer.description).html_safe, "immagine" => "/data/" + @designer.image_url , quirks_mode: true).html_safe   %>
+<%=
+    JSON.generate(
+             "nome" => @designer.name,
+             "descrizione" => nl2br(@designer.description).html_safe,
+             "immagine" => "/data/" + @designer.image_url,
+             "prodotti" => @prodottiContainer.as_json).html_safe
+%>
