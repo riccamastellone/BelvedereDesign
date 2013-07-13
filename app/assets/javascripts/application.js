@@ -61,6 +61,9 @@ function cercaShowroom() {
                html += "<p><a id=\"sr-" + data[key].id + "\" href='javascript:selezioneSR(" + data[key].id + ");'>" + data[key].name + " - " + distanza;
                html += "</a><br><span class='subtitle'>" + data[key].address + "</span></p>";
             }
+            if(data.length == 0 ) {
+                  html = "<p>Siamo spiacenti,<br>non abbiamo nessuno showroom vicino a te</p>"
+            }
             $('#loader').fadeOut("fast");
             $('.showroom-list').html(html);
         }, "json");
