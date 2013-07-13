@@ -11,6 +11,7 @@ Belvederedesign::Application.routes.draw do
   namespace :admin do
     resources :news
     resources :designer
+    resources :products
   end
   resources :news_events, only: [:index, :show]
   resources :designers, only: [:index]

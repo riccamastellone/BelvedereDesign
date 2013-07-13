@@ -1,0 +1,19 @@
+<h1>Ammistrazione Prodotti</h1>
+<%= link_to "Nuovo Prodotto", [:new_admin_product], :class=>"btn" %>
+
+<% @products.each do |des| %>
+    <div style="clear:both; margin-top: 30px;overflow: auto">
+      <h4><%= des.name %>
+        <%= link_to '/admin/products/' + des.id.to_s + '/edit', :class=>"btn" do %>
+            <i class="icon-pencil"></i> Modifica
+        <% end %>
+        <%= link_to '/admin/products/' + des.id.to_s, method: :delete, data: { confirm: 'Confermi l\'eliminazione?' }, :class=>"btn" do %>
+            <i class="icon-remove"></i> Elimina
+        <% end %>
+      </h4>
+      <%= #image_tag("/data/#{des.image_url}", style: "float:left; max-width:200px; padding: 0 15px 10px 0;")
+      %>
+      <p><%= nl2br(des.description).html_safe %></p>
+
+    </div>
+<% end %>
