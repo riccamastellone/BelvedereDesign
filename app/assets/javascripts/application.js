@@ -22,7 +22,7 @@ $(window).resize(function() {
 
 function initialize() {
     geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var latlng = new google.maps.LatLng(45.4654542, 9.186515999999983);
     var mapOptions = {
         zoom: 14,
         center: latlng,
@@ -66,7 +66,7 @@ function cercaShowroom() {
         }, "json");
 }
 function selezioneSR(id) {
-
+    $('.srlist a').css("text-decoration",'none');
     $('#loader').fadeIn("fast");
     $.get("/showroom/detail/ajax/" + id,
         function(data) {
@@ -79,6 +79,7 @@ function selezioneSR(id) {
 
             colonna.html(html).fadeIn();
             initialize();
+            $('#sr-' + id).css("text-decoration",'underline');
             codeAddress(data.address );
             $('.prodotti .container').css('background-image','none');
             $('.prodotti .container').css('background','#101010');
