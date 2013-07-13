@@ -19,6 +19,7 @@ function cercaShowroom() {
     $.get("/showroom/ajax/",
         { "indirizzo": $('input[name=indirizzo]').val() },
         function(data) {
+            console.log(data)
             var html = "";
             for(var key in data) {
                 if(data[key].distance < 1)  {  // Usiamo la distanza in metri
@@ -27,10 +28,15 @@ function cercaShowroom() {
                 } else {   // Arrotondiamo ai km
                     distanza =  Math.round(data[key].distance) + " km";
                 }
-               html += "<p>" + data[key].name + " - " + distanza + "</p>";
+               html += "<p><a href='javascript:selezioneSR(" + data[key].id + ");'>" + data[key].name + " - " + distanza;
+               html += "</a><br><span class='subtitle'>" + data[key].address + "</span></p>";
             }
             $('.showroom-list').html(html);
         }, "json");
+}
+function selezioneSR(id) {
+    var colonna =  $('.prodotti .secondcolumn');
+
 }
 function correggiAltezza() {
     if($('.designers .container').size() > 0) {

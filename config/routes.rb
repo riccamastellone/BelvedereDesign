@@ -23,6 +23,8 @@ Belvederedesign::Application.routes.draw do
   get '/designers/ajax/:id', to: 'designers#showajax'
   get '/product/ajax/category/:id', to: 'product#listajax'
   get '/showroom/ajax/', to: 'showroom#listajax'
+  get '/showroom/detail/ajax/:id', to: 'showroom#ajaxdetail'
+
   match 'showroom' => 'showroom#index', :via => :get
   match 'main' => 'main#home', :via => :get
   match 'l-azienda' => 'main#azienda', :via => :get
