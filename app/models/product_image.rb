@@ -6,6 +6,9 @@ class ProductImage < ActiveRecord::Base
   def self.saveimg(upload)
     name =  upload.original_filename
     directory = "public/data/prodotti"
+    #nel caso non esista la creiamo
+    Dir.mkdir(directory) unless File.exists?(directory)
+
     # create the file path
     path = File.join(directory, name)
     # write the file

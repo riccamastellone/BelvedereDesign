@@ -8,6 +8,9 @@ class Designer < ActiveRecord::Base
   def self.saveimg(upload)
     name =  upload['image'].original_filename
     directory = "public/data"
+    #creiamo la directory se non esiste
+    Dir.mkdir(directory) unless File.exists?(directory)
+
     # create the file path
     path = File.join(directory, name)
     # write the file
