@@ -237,6 +237,22 @@ h5 {
    position: relative;
    bottom: 5px;
  }
+ #map-canvas {
+   height:400px;
+ }
+.sr-details {
+  overflow: auto;
+
+}
+ .sr-details div {
+   float: left;
+   max-width: 40%;
+   vertical-align: bottom;
+ }
+.sr-details div:first-child {
+  margin-right: 50px;
+}
+
 /** supersized */
 
 .navigazione-block {

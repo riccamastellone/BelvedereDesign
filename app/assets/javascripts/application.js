@@ -1,5 +1,10 @@
 //= require jquery
 //= require jquery_ujs
+
+var geocoder;
+var map;
+
+
 $(function() {
     correggiAltezza();
     if(window.location.hash) {
@@ -15,11 +20,36 @@ $(window).resize(function() {
 
 });
 
+function initialize() {
+    geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var mapOptions = {
+        zoom: 14,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
+
+
+function codeAddress(address) {
+    geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+}
 function cercaShowroom() {
+    $('#loader').fadeIn("fast");
     $.get("/showroom/ajax/",
         { "indirizzo": $('input[name=indirizzo]').val() },
         function(data) {
-            console.log(data)
             var html = "";
             for(var key in data) {
                 if(data[key].distance < 1)  {  // Usiamo la distanza in metri
@@ -28,14 +58,32 @@ function cercaShowroom() {
                 } else {   // Arrotondiamo ai km
                     distanza =  Math.round(data[key].distance) + " km";
                 }
-               html += "<p><a href='javascript:selezioneSR(" + data[key].id + ");'>" + data[key].name + " - " + distanza;
+               html += "<p><a id=\"sr-" + data[key].id + "\" href='javascript:selezioneSR(" + data[key].id + ");'>" + data[key].name + " - " + distanza;
                html += "</a><br><span class='subtitle'>" + data[key].address + "</span></p>";
             }
+            $('#loader').fadeOut("fast");
             $('.showroom-list').html(html);
         }, "json");
 }
 function selezioneSR(id) {
-    var colonna =  $('.prodotti .secondcolumn');
+
+    $('#loader').fadeIn("fast");
+    $.get("/showroom/detail/ajax/" + id,
+        function(data) {
+            console.log(data)
+            var colonna =  $('.prodotti .filled');
+            var html = "<h2>" + data.name +"</h2>";
+            html += "<div class='sr-details'><div><p>" + data.description +  "</p></div>";
+            html += "<div><p>" + data.address +  "</p></div></div><div id=\"map-canvas\"></div>";
+            colonna.css('width',($(window).width()-$('.firstcolumn').width()- 120) + 'px');
+
+            colonna.html(html).fadeIn();
+            initialize();
+            codeAddress(data.address );
+            $('.prodotti .container').css('background-image','none');
+            $('.prodotti .container').css('background','#101010');
+            $('#loader').fadeOut("fast");
+        }, "json");
 
 }
 function correggiAltezza() {
@@ -56,6 +104,9 @@ function correggiAltezza() {
             $('.prodotti .firstcolumn').height($(window).height()-(44+183));
             if($('.prodotti .secondcolumn').size()>0) {
                 $('.prodotti .secondcolumn').height($(window).height()-(44+183));
+            }
+            if($('.prodotti .filled').size()>0) {
+                $('.prodotti .filled').height($(window).height()-(44+183));
             }
         }
 
