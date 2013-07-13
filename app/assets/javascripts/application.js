@@ -78,24 +78,26 @@ function showDesigner(id) {
 
 
 function showCategoryList(id) {
-    $('#loader').fadeIn("fast");
+    $('#loader').fadeIn("fast");   // Visualizziamo il loader
+    $('.catlist h5').css("text-decoration",'none');     // Desottolineamo tutte le categorie
     $.get("/product/ajax/category/" + id,
         function(data) {
             var colonna =  $('.prodotti .secondcolumn');
             colonna.html("<h1>Prodotti</h1>");
-            if(data.length <= 0) {
+            if(data.length <= 0) { // Nessun prodotto per questa categoria
                 alert("Nessun prodotto per questa categoria");
                 colonna.fadeOut();
-            } else {
+            } else {    // Abbiamo prodotti!
             colonna.fadeIn();
-            console.log(data)
+            $('#cat-' + id).css("text-decoration",'underline');    // Sottlineiamo la categoria selezionata
             for (var el in data) {
                 colonna.append("<h5><a href='/product/" + data[el].id + "'>" + data[el].name + "</a></h5>");
+                }
             }
-            }
+
             $('#loader').fadeOut();
 
-        }, "json").fail(function() {
+        }, "json").fail(function() {     // In caso di errore
             alert("Categoria non esistente");
             $('#loader').fadeOut();
             colonna.fadeOut();

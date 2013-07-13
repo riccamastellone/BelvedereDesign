@@ -1,8 +1,8 @@
-<div class="3columns columns">
+<div class="3columns columns catlist">
   <div class="firstcolumn column">
     <h1>Categorie</h1>
     <% @categories.each do |cat| %>
-        <h5><a href="javascript:showCategoryList(<%= cat.id.to_s %>)"><%= cat.name %></a></h5>
+        <h5 id="cat-<%= cat.id.to_s %>"><a href="javascript:showCategoryList(<%= cat.id.to_s %>)"><%= cat.name %></a></h5>
     <% end %>
   </div>
   <div class="secondcolumn column"></div>
