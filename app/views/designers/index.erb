@@ -1,8 +1,8 @@
-<div class="3columns columns">
+<div class="3columns columns deslist">
    <div class="firstcolumn column">
      <h1>I Nostri Designer</h1>
      <% @designer.each do |des| %>
-         <h5><a href="javascript:showDesigner(<%= des.id.to_s %>)"><%= des.name %></a></h5>
+         <h5 id="des-<%= des.id.to_s %>"><a href="javascript:showDesigner(<%= des.id.to_s %>)"><%= des.name %></a></h5>
      <% end %>
    </div>
   <div class="secondcolumn column"></div>

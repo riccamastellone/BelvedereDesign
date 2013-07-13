@@ -48,25 +48,30 @@ function correggiAltezza() {
 
 function showDesigner(id) {
     $('#loader').fadeIn("fast");
+    $('.deslist h5').css("text-decoration",'none');     // Desottolineamo tutti i designers
     window.location.hash = id;
     $.get("/designers/ajax/" + id,
         function(data) {
             var colonna =  $('.designers .secondcolumn');
+
+            // Mettiamo la foto del designer come sfondo
             $('.designers .container').css('background-image','url(' + data.immagine + ')');
             $('.designers .container').css('background-position','right center');
             $('.designers .container').css('background-size','contain');
+
             colonna.fadeIn();
             colonna.html("<h2>" + data.nome + "</h2>");
             colonna.append("<p>" + data.descrizione + "</p>");
+
+            // Visualizziamo i prodotti legati a questo designer  solo se ce ne sono
             if(data.prodotti.length > 0) {
             colonna.append("<h3>Prodotti disegnati</h3>");
-
             for (var el in data.prodotti) {
                 var html = "<a href=\"#\"><img class=\"minuatura-prodotto\" src=\"/data/prodotti/" + data.prodotti[el].immagini[0].image_url + "\" title=\"" +  data.prodotti[el].prodotto.name + "\"></a>";
                 colonna.append(html);
+                }
             }
-            }
-
+            $('#des-' + id).css("text-decoration",'underline');
             $('#loader').fadeOut();
         }, "json").fail(function() {
             alert("Designer non esistente");
