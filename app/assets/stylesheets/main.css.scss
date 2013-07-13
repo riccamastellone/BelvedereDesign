@@ -221,6 +221,18 @@ h5 {
   font-size: 0.9em;
 }
 
+/** showroom */
+.designers .container {
+  background-image: url(/assets/bg_showroom.jpg);
+  background-attachment: fixed;
+  padding: 0;
+  background-size: cover;
+  background-repeat:no-repeat;
+}
+.srlist input {
+  width: 90%;
+}
+
 /** supersized */
 
 .navigazione-block {

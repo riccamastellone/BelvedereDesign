@@ -3,8 +3,7 @@ class CreateShowrooms < ActiveRecord::Migration
     create_table :showrooms do |t|
       t.string :name
       t.text :description
-      t.float :latitude
-      t.float :longitude
+      t.text :address
 
       t.timestamps
     end

@@ -22,7 +22,8 @@ Belvederedesign::Application.routes.draw do
   delete '/admin/products/ajaximg/:id', to: 'admin::products#deleteimg'
   get '/designers/ajax/:id', to: 'designers#showajax'
   get '/product/ajax/category/:id', to: 'product#listajax'
-
+  get '/showroom/ajax/', to: 'showroom#listajax'
+  match 'showroom' => 'showroom#index', :via => :get
   match 'main' => 'main#home', :via => :get
   match 'l-azienda' => 'main#azienda', :via => :get
   match 'partners' => 'main#partners', :via => :get

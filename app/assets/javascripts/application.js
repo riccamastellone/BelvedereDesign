@@ -5,6 +5,9 @@ $(function() {
     if(window.location.hash) {
         showDesigner(parseInt(window.location.hash.substring(1)));
     }
+    $('#cercaShowroom').click(function() {
+        cercaShowroom();
+    })
 
 });
 $(window).resize(function() {
@@ -12,7 +15,23 @@ $(window).resize(function() {
 
 });
 
+function cercaShowroom() {
+    $.get("/showroom/ajax/",
+        { "indirizzo": $('input[name=indirizzo]').val() },
+        function(data) {
+            var html = "";
+            for(var key in data) {
+                if(data[key].distance < 1)  {  // Usiamo la distanza in metri
 
+                   distanza = Math.round(data[key].distance*1000) + " m";
+                } else {   // Arrotondiamo ai km
+                    distanza =  Math.round(data[key].distance) + " km";
+                }
+               html += "<p>" + data[key].name + " - " + distanza + "</p>";
+            }
+            $('.showroom-list').html(html);
+        }, "json");
+}
 function correggiAltezza() {
     if($('.designers .container').size() > 0) {
         if($('.designers .firstcolumn').height() < ($(window).height()-(44+183))) {
