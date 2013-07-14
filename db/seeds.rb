@@ -10,6 +10,9 @@ Designer.delete_all
 Designer.create(name: 'Chris Paul', description: 'Paul frequentò la West Forsyth High School, dove venne nominato Mr. Basketball del Nord Carolina dal Charlotte Observer, il giornale locale. Paul tenne una media di 30,8 punti, 8 assist, 5 rimbalzi e 6 rubate a partita, arrivando alle finali regionali. In una partita segnò 61 punti, sbagliando apposta il libero supplementare (che doveva tirare per aver fatto canestro con fallo) in onore di suo nonno, morto pochi giorni prima alla età di 61 anni.', image_url: 'hi-res-6916468_crop_exact.jpg')
 Designer.create(name: 'Renatone Zero', description: 'Il triangolo noooo', image_url: 'renato.jpg')
 
+Showroom.delete_all
+Showroom.create(name:'Centro Belvedere Superbello', description:'mamma mia che bello questo showroom', address:'Via Roma 2, 23807 Merate, Italia')
+
 categorie = [
     ["Armadi"],
     ["Tavoli"],
