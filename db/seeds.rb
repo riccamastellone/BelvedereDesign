@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Designer.delete_all
-description_Mark_Anders = ''
+
 designer_list = [
     [ 'Mark Anders', 'Mark Anders ha cominciato la sua carriera nella Belvedere Design nel 2011.
        Cresciuto sulla costa del Dorset, nel sud del Regno Unito, Mark nutre da sempre un’attrazione particolare per il mare e le barche. Il suo interesse per l’ambiente marino, inclusa l’architettura, l’ingegneria, e il design in genere, è stato ulteriormente galvanizzato durante un precedente impiego presso un’azienda europea costruttrice di yacht.
@@ -32,8 +32,21 @@ designer_list.each do |name, description, image_url|
   Designer.create( name: name, description: description, image_url: image_url )
 end
 
+
 Showroom.delete_all
-Showroom.create(name:'Centro Belvedere Superbello', description:'mamma mia che bello questo showroom', address:'Via Roma 2, 23807 Merate, Italia')
+showroom_list = [
+    [ "Centro Belvedere Merate", "Il Centro Belvedere Merate è il punto di riferimento del mondo del design d'interni nella Brianza. Addetti qualificati vi sapranno consigliare la migliore scelta, confezionata ad hoc per soddisfare ogni vostra esigenza.", "Via Roma 2, 23807 Merate, Italia" ],
+    [ "Studio Lombardo del Design", "Situato a pochi passi dalla metropolitana, il nostro studio è l'ideale per il cliente che vuole essere seguito e coccolato in ogni sua scelta da personale altamente qualificato", "Piazza Belgioioso 2, 20121 Milano, Italia" ],
+    [ "Monza Design", "Il negozio, molto elegante nella sua struttura ottocentesca, dispone di un’ampia superficie in cui sono esposti i principali marchi d'arredamento per tutta la casa.", "Via Italia 15, 20900 Monza, Italia" ],
+    [ "Belvedere Now", "Il negozio, moderno ed esclusivo, si trova lungo l'elegante Corso Filiberto. E' presente una raffinata selezione di marchi, le cui proposte vengono costantemente aggiornate e diversificate, tanto da rendere Belvedere Now un negozio di riferimento delle tendenze più attuali del design.", "Corso Emanuele Filiberto 16, 23900 Lecco, Italia" ],
+    [ "Bergamo Belvedere", "Con 4 piani di show-room interamente dedicati a mobili ed elementi d'arredo, il palazzo Belvedere Bergamo, è una delle più vaste realtà Lombarde e offre un'ampia esposizione di mobili e complementi d'arredo per la casa", "Via Broseta 20, 24122 Bergamo, Italia"],
+
+]
+
+showroom_list.each do |name, description, address|
+  Showroom.create( name: name, description: description, address: address )
+end
+
 
 categorie = [
     ["Armadi"],
