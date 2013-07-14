@@ -1,0 +1,11 @@
+<div class="3columns columns catlist">
+  <div class="firstcolumn column">
+    <h1>Top PRodotti</h1>
+    <% @prodotti.each do |p| %>
+        <h5 id="cat-<%= p.id.to_s %>"><a href="javascript:showCategoryList(<%= p.id.to_s %>)"><%= p.name %></a></h5>
+    <% end %>
+  </div>
+  <div class="secondcolumn column"></div>
+
+
+</div>

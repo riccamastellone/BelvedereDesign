@@ -9,8 +9,9 @@ class ProductController < ApplicationController
   def index
     @categories = Categoria.all
   end
-
-
+  def top
+    @prodotti = Product.where(:featured => true)
+  end
   def listajax
 
 

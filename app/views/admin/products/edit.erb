@@ -16,6 +16,11 @@
           <%= f.label :Designer %>
           <%= select_tag(:designer_id, options_from_collection_for_select(Designer.all, :id, :name)) %>
       </div>
+      <div class="span2">
+        <%= f.label :'In Evidenza' %>
+        <%= check_box_tag 'featured' %>
+
+      </div>
     </div>
 
 
@@ -35,5 +40,8 @@
     $(function() {
         $('select[name=designer_id]').val(<%= @product.designer_id %>)
         $('select[name=categoria_id]').val(<%= @product.categoria_id %>)
+        if(<%= @product.featured %> == true ) {
+            $('input[type=checkbox]').attr('checked', true);
+        }
     });
 </script>

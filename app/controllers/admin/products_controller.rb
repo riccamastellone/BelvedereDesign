@@ -27,6 +27,7 @@ class Admin::ProductsController < ApplicationController
     @product.description =  params[:product]["description"]
     @product.designer_id =  params["designer_id"]
     @product.categoria_id =  params["categoria_id"]
+    @product.featured =  params["featured"] ? true : false
     @product.save
     redirect_to '/admin/products/' + @product.id.to_s
   end
@@ -34,6 +35,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new(params[:product])
     @product.designer_id =  params["designer_id"]
     @product.categoria_id =  params["categoria_id"]
+    @product.featured =  params["featured"] ? true : false
     @product.save
     redirect_to '/admin/products/' + @product.id.to_s
   end
