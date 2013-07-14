@@ -7,8 +7,30 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Designer.delete_all
-Designer.create(name: 'Chris Paul', description: 'Paul frequentò la West Forsyth High School, dove venne nominato Mr. Basketball del Nord Carolina dal Charlotte Observer, il giornale locale. Paul tenne una media di 30,8 punti, 8 assist, 5 rimbalzi e 6 rubate a partita, arrivando alle finali regionali. In una partita segnò 61 punti, sbagliando apposta il libero supplementare (che doveva tirare per aver fatto canestro con fallo) in onore di suo nonno, morto pochi giorni prima alla età di 61 anni.', image_url: 'hi-res-6916468_crop_exact.jpg')
-Designer.create(name: 'Renatone Zero', description: 'Il triangolo noooo', image_url: 'renato.jpg')
+description_Mark_Anders = ''
+designer_list = [
+    [ 'Mark Anders', 'Mark Anders ha cominciato la sua carriera nella Belvedere Design nel 2011.
+       Cresciuto sulla costa del Dorset, nel sud del Regno Unito, Mark nutre da sempre un’attrazione particolare per il mare e le barche. Il suo interesse per l’ambiente marino, inclusa l’architettura, l’ingegneria, e il design in genere, è stato ulteriormente galvanizzato durante un precedente impiego presso un’azienda europea costruttrice di yacht.
+
+       Indipendente per natura e desideroso di realizzarsi da solo, nel 2004 Mark ha aperto uno studio di design a Weymouth, il cui successo gli ha permesso di guadagnarsi un’ottima reputazione in materia di innovazione e versatilità.
+       Ad oggi, i suoi progetti includono la realizzazione di barche da competizione e l’arredamento di yacht club, hotel e superyacht. Il design di Mark si focalizza sulla semplicità, sia in termini di forma che di materiali. Esso è in grado di evocare una sorta di eleganza informale perfettamente incarnata dalla filosofia Belvedere.', 'Anders-1.jpg' ],
+    [ 'Glyn Peter Machin', 'Glyn Peter Machin è un artista multidisciplinare il cui lavoro rivela una straordinaria intelligenza, un particolare senso delle strutture e una maestria di precisione.
+
+      Nelle prime fasi della sua carriera, Glyn ha viaggiato in lungo e in largo in Europa, Asia e negli Stati Uniti, collezionando idee e inspirazioni da innumerevoli paesaggi, culture e architetture. Questo gli ha permesso di trarre ispirazione da fonti di diversa natura, da diversi stili, creando, allo stesso tempo lavori originali contrassegnati da un senso estetico che riflette la sua idea di semplicità, di funzione e di stile.
+      Dalla Scandinavia, con la sua pronunciata tradizione marinaresca, il design di Glyn presenta spesso un tocco pratico, un’economia di linee che, allo stesso tempo, è capace di essere funzionale ma elegante.', 'Machin-1.jpg' ],
+    [ 'Oliviero Panzeri', 'Oliviero Panzeri ha studiato al Politecnico di Milano, dove ha avuto modo di sviluppare un interesse duraturo nel design della mobilia appositamente prodotta per gli ambienti di destinazione, con particolare attenzione sulla mobilia pieghevole. Panzeri ha alle spalle una lunga carriera nel campo dell’architettura e del design tradizionale prima di aprire il suo studio a Shamrock Quay, nella regione di Southampton, in Inghilterra nel 1979.
+      La sua reputazione è cresciuta a livello internazionale soprattutto nel settore degli alberghi, inclusi quelli di lusso. Interni progettati da lui possono essere trovati in hotel a Shanghai, San Pietroburgo, New York, Vancouver e Doha.  Seppur unica, ogni realizzazione di Munford porta la sua caratteristica firma, che si esprime nella presenza di influenze evocatrici del glorioso passato dell’ Art Deco. La sua profonda conoscenza di metodi tradizionali di produzione e di materiali da vita a prodotti di squisita finitura.', 'Munford-1.jpg' ],
+    [ 'Kipp Stewart', 'Nato professionalmente come architetto, Kipp Stewart si è distinto quale un eccellente designer americano di mobilia.
+      È conosciuto nel settore come un artista pieno di talento avente un profondo rispetto per la tradizione. I suoi prodotti hanno ottenuto riconoscimenti internazionali e sono ammirati per la loro eleganza semplice e funzionale.
+
+      Kipp Stewart vive a Carmel, in California, seppur dia credito ai suoi studi in Europa quali fonte ispiratrice grazie alla sua storia e alle classiche forme architettoniche. Fa spesso riferimento al defunto Charles Eames, con il quale ha lavorato in passato e che ha rappresentato per lui una notevole influenza. Stewart ha ricevuto numerosi riconoscimenti a livello internazionale. Kipp nutre una grande passione per le arti in genere, il che gli ha permesso di realizzare lavori nel campo della pittura, della fotografia, dell’architettura e del design della mobilia.
+       Il Ventana Inn, concepito architettonicamente e costruito in armonia con il paesaggio circostante del Big Sur, è il suo progetto architettonico di maggiore successo.
+      Le sue pitture sono state esposte in musei e gallerie d’arte nelle maggiori città americane, incluso il Museum of Modern Art di New York City.', 'Stewart-1.jpg' ]
+]
+
+designer_list.each do |name, description, image_url|
+  Designer.create( name: name, description: description, image_url: image_url )
+end
 
 Showroom.delete_all
 Showroom.create(name:'Centro Belvedere Superbello', description:'mamma mia che bello questo showroom', address:'Via Roma 2, 23807 Merate, Italia')
