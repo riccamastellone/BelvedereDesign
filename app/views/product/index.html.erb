@@ -1,5 +1,6 @@
 <div class="3columns columns catlist">
   <div class="firstcolumn column">
+    <h2><a href="/top-products">Top Prodotti</a></h2>
     <h1>Categorie</h1>
     <% @categories.each do |cat| %>
         <h5 id="cat-<%= cat.id.to_s %>"><a href="javascript:showCategoryList(<%= cat.id.to_s %>)"><%= cat.name %></a></h5>
