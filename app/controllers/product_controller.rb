@@ -42,13 +42,13 @@ class ProductController < ApplicationController
 
     # tiro fuori il prodotto precedente e successivo
     begin
-      @precedente = Product.where("id < #{params[:id]}" ).order("id desc").limit(1)
+      @precedente = Product.where("id < #{params[:id]} AND categoria_id = #{@prodotto.categoria_id}" ).order("id desc").limit(1)
     rescue ActiveRecord::RecordNotFound
       @precedente = false
       return
     end
     begin
-      @successivo = Product.where("id > #{params[:id]}").order("id asc").limit(1)
+      @successivo = Product.where("id > #{params[:id]} AND categoria_id = #{@prodotto.categoria_id}").order("id asc").limit(1)
     rescue ActiveRecord::RecordNotFound
       @successivo = false
       return
