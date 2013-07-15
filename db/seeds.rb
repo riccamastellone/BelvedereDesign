@@ -136,7 +136,20 @@ product_list = [
       1, 6],
      ["Gamma",
       "Composizione soggiorno con struttura in essenza rovere moro e frontali in laccato lucido bianco ghiaccio e pensile basculante con vetro satinato stopsol.",
-      2, 6]
+      2, 6],
+     ["Amber",
+      "Cabina armadio con elementi intercambiabili tra loro, completa di ripiani, tubi appendiabiti e cassettiere. Attrezzature moderne, grandi scaffali per una classe inconfondibile.",
+      3, 1],
+     ["Clearance",
+      "Il modello Clearance propone modelli di ispirazione contemporanea, completando la struttura con due o tre ante scorrevoli composte da pannelli in vetro. La modernità di questa soluzione è accentuata dal telaio in alluminio che racchiude gli inserti in vetro.",
+      4, 1],
+     ["Mood",
+      "L'armadio battente in vero legno Mood è caratterizzato da ante in tamburato impiallacciate in vero legno. Questa tecnica costruttiva dona leggerezza e resistenza alle strutture, impreziosite e rese uniche dall'impiallacciatura in essenza di legno. L'armadio battente Mood può essere realizzato in vero legno naturale noce canaletto, in rovere moro, e nell'esclusivo olmo dalle raffinate finiture Perla e Brown. ",
+      1, 1],
+     ["Vision",
+     "Una soluzione arredativa funzionale ed elegante: l'amadio con spogliatoio terminale modello Vision, offre tutto quello che serve nella camera da letto contemporanea.Il mobile spogliatoio è completo di illuminazione interna con luci led ad accensione tramite sensore di presenza. A luci spente il particolare vetro applicato alle ante dello spogliatoio funge da specchi. Quando invece le luci vengono accese l'interno dello spogliatoio traspare attraverso le ante.",
+      2, 1],
+
 ]
 
 product_list.each do |name, description, designer_id, categoria_id|
@@ -185,6 +198,16 @@ product_images_list = [
     ["Orbital3.jpg", 16],
     ["Jesse1.jpg", 17],
     ["Gamma1.jpg", 18],
+    ["Amber1.jpg",19],
+    ["Clearance1.jpg",20],
+    ["Clearance2.jpg",20],
+    ["Mood1.jpg",21],
+    ["Mood2.jpg",21],
+    ["Mood3.jpg",21],
+    ["Vision1.jpg",22],
+    ["Vision2.jpg",22],
+    ["Vision3.jpg",22],
+    ["Vision4.jpg",22]
 ]
 
 product_images_list.each do |image_url, product_id|
