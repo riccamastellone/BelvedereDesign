@@ -1,13 +1,13 @@
 #encoding: utf-8
 Categoria.delete_all
 categorie = [
-    ["Armadi"],
-    ["Tavoli"],
-    ["Sedie"],
-    ["Divani e Poltrone"],
-    ["Letti"],
-    ["Mobili per Soggiorno"],
-    ["Arredo per Cucina"]
+    "Armadi",
+    "Tavoli",
+    "Sedie",
+    "Divani e Poltrone",
+    "Letti",
+    "Mobili per Soggiorno",
+    "Arredo per Cucina"
 ]
 
 categorie.each do |name|
