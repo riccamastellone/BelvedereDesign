@@ -1,5 +1,5 @@
 class ShowroomController < ApplicationController
-# ricordardi da fare rake geocode:all CLASS=Showroom
+# ricordarsi da fare rake geocode:all CLASS=Showroom quando si aggiunge uno
 
   before_filter :set_constants
   def set_constants

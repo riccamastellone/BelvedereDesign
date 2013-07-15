@@ -23,5 +23,7 @@ class MainController < ApplicationController
 
   def getinspired
     @attivo = 1
+    @classecorpo = "prodotti"
   end
+
 end
