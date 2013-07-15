@@ -25,6 +25,7 @@ Belvederedesign::Application.routes.draw do
   get '/showroom/ajax/', to: 'showroom#listajax'
   get '/showroom/detail/ajax/:id', to: 'showroom#ajaxdetail'
 
+  match 'get-inspired' => 'main#getinspired', :via => :get
   match 'top-products' => 'product#top', :via => :get
   match 'showroom' => 'showroom#index', :via => :get
   match 'main' => 'main#home', :via => :get

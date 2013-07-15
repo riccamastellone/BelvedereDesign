@@ -20,4 +20,8 @@ class MainController < ApplicationController
   def servizi
     @attivo = 6
   end
+
+  def getinspired
+    @attivo = 1
+  end
 end
