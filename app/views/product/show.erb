@@ -29,6 +29,9 @@
 </div>
 
 <div class="product-info">
-  <h2><%= @prodotto.name %> <span class="des-detail">design by <a href="/designers#<%= @designer.id %>"><%= @designer.name %></a></span></h2>
+  <h2><%= @prodotto.name %> <span class="des-detail">design by <a href="/designers#<%= @designer.id %>"><%= @designer.name %></a></span>
+    <span class="orientation"><a href="/product/1">[prodotto precedente</a> | <a href="/product">elenco</a> | <a href="/product/1">prodotto successivo]</a></span>
+  </h2>
      <p><%= nl2br(@prodotto.description).html_safe %></p>
+
 </div>
