@@ -39,6 +39,18 @@ class ProductController < ApplicationController
     @prodotto = Product.find(params[:id])
     @designer = Designer.find(@prodotto.designer_id);
     @immagini = ProductImage.where(:product_id => params[:id])
+    begin
+      @precedente = Product.where("id < #{params[:id]}" ).order("id desc").limit(1)
+    rescue ActiveRecord::RecordNotFound      #Gestiamo il caso di id non presente
+      @precedente = false
+      return
+    end
+    begin
+      @successivo = Product.where("id > #{params[:id]}").order("id asc").limit(1)
+    rescue ActiveRecord::RecordNotFound      #Gestiamo il caso di id non presente
+      @successivo = false
+      return
+    end
     rescue ActiveRecord::RecordNotFound      #Gestiamo il caso di id non presente
       redirect_to '/'
       return
