@@ -18,7 +18,8 @@
 
 </script>
 
-
+<% # nascondo le frecce nel caso ci sia una sola foto
+   if @immagini.length > 1 %>
 <div class="navigazione-block">
   <div class="destra">
     <img src="/assets/supersized/destra.png">
@@ -27,7 +28,7 @@
     <img src="/assets/supersized/sinistra.png">
   </div>
 </div>
-
+<% end %>
 <div class="product-info">
   <h2><%= @prodotto.name %> <span class="des-detail">design by <a href="/designers#<%= @designer.id %>"><%= @designer.name %></a></span>
     <span class="orientation">
