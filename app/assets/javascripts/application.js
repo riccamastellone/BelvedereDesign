@@ -14,6 +14,11 @@ $(function() {
         cercaShowroom();
     })
 
+    if($(window).width() < 1400) {
+        $('header nav li').css('padding-left','5%')
+        $('header ul li:first-child').css('padding-left','0')
+    }
+
 });
 $(window).resize(function() {
     correggiAltezza();
