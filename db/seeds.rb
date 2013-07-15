@@ -146,7 +146,7 @@ product_list = [
 ]
 
 product_list.each do |name, description, designer_id, categoria_id|
-  Product.create(name: name, description: description, categoria_id: categoria_id)
+  Product.create(name: name, description: description, designer_id: designer_id, categoria_id: categoria_id)
 end
 
 
