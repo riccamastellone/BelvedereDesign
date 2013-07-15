@@ -101,7 +101,9 @@ function correggiAltezza() {
             $('.designers .container').height(($(window).height()-(44+183)));
             $('.designers .firstcolumn').height($(window).height()-(44+183));
             if($('.designers .secondcolumn').size()>0) {
-                $('.designers .secondcolumn').height($(window).height()-(44+183));
+                $('.designers .secondcolumn').css('min-height',$(window).height()-(44+183))
+                $('.designers .secondcolumn').css('height','auto')
+
             }
         }
 
@@ -112,7 +114,7 @@ function correggiAltezza() {
             $('.prodotti .container').height(($(window).height()-(44+183)));
             $('.prodotti .firstcolumn').height($(window).height()-(44+183));
             if($('.prodotti .secondcolumn').size()>0) {
-                $('.prodotti .secondcolumn').height($(window).height()-(44+183));
+               $('.prodotti .secondcolumn').height($(window).height()-(44+183));
             }
             if($('.prodotti .filled').size()>0) {
                 $('.prodotti .filled').height($(window).height()-(44+183));
@@ -155,6 +157,7 @@ function showDesigner(id) {
             }
             $('#des-' + id).css("text-decoration",'underline');
             $('#loader').fadeOut();
+            correggiAltezza()
         }, "json").fail(function() {
             alert("Designer non esistente");
             $('#loader').fadeOut();
