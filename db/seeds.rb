@@ -42,16 +42,16 @@ end
 
 Showroom.delete_all
 showroom_list = [
-    [ "Centro Belvedere Merate", "Il Centro Belvedere Merate è il punto di riferimento del mondo del design d'interni nella Brianza. Addetti qualificati vi sapranno consigliare la migliore scelta, confezionata ad hoc per soddisfare ogni vostra esigenza.", "Via Roma 2, 23807 Merate, Italia" ],
-    [ "Studio Lombardo del Design", "Situato a pochi passi dalla metropolitana, il nostro studio è l'ideale per il cliente che vuole essere seguito e coccolato in ogni sua scelta da personale altamente qualificato", "Piazza Belgioioso 2, 20121 Milano, Italia" ],
-    [ "Monza Design", "Il negozio, molto elegante nella sua struttura ottocentesca, dispone di un’ampia superficie in cui sono esposti i principali marchi d'arredamento per tutta la casa.", "Via Italia 15, 20900 Monza, Italia" ],
-    [ "Belvedere Now", "Il negozio, moderno ed esclusivo, si trova lungo l'elegante Corso Filiberto. E' presente una raffinata selezione di marchi, le cui proposte vengono costantemente aggiornate e diversificate, tanto da rendere Belvedere Now un negozio di riferimento delle tendenze più attuali del design.", "Corso Emanuele Filiberto 16, 23900 Lecco, Italia" ],
-    [ "Bergamo Belvedere", "Con 4 piani di show-room interamente dedicati a mobili ed elementi d'arredo, il palazzo Belvedere Bergamo, è una delle più vaste realtà Lombarde e offre un'ampia esposizione di mobili e complementi d'arredo per la casa", "Via Broseta 20, 24122 Bergamo, Italia"],
+    [ "Centro Belvedere Merate", "Il Centro Belvedere Merate è il punto di riferimento del mondo del design d'interni nella Brianza. Addetti qualificati vi sapranno consigliare la migliore scelta, confezionata ad hoc per soddisfare ogni vostra esigenza.", "Via Roma 2, 23807 Merate, Italia" ,"45.6980538","9.4182072"    ],
+    [ "Studio Lombardo del Design", "Situato a pochi passi dalla metropolitana, il nostro studio è l'ideale per il cliente che vuole essere seguito e coccolato in ogni sua scelta da personale altamente qualificato", "Piazza Belgioioso 2, 20121 Milano, Italia","45.46711639999999","9.192640299999999" ],
+    [ "Monza Design", "Il negozio, molto elegante nella sua struttura ottocentesca, dispone di un’ampia superficie in cui sono esposti i principali marchi d'arredamento per tutta la casa.", "Via Italia 15, 20900 Monza, Italia" ,"45.582825","9.274025"],
+    [ "Belvedere Now", "Il negozio, moderno ed esclusivo, si trova lungo l'elegante Corso Filiberto. E' presente una raffinata selezione di marchi, le cui proposte vengono costantemente aggiornate e diversificate, tanto da rendere Belvedere Now un negozio di riferimento delle tendenze più attuali del design.", "Corso Emanuele Filiberto 16, 23900 Lecco, Italia","45.8388961","9.410803" ],
+    [ "Bergamo Belvedere", "Con 4 piani di show-room interamente dedicati a mobili ed elementi d'arredo, il palazzo Belvedere Bergamo, è una delle più vaste realtà Lombarde e offre un'ampia esposizione di mobili e complementi d'arredo per la casa", "Via Broseta 20, 24122 Bergamo, Italia","45.6927032","9.6622358"],
 
 ]
 
-showroom_list.each do |name, description, address|
-  Showroom.create( name: name, description: description, address: address )
+showroom_list.each do |name, description, address, lat, long|
+  Showroom.create( name: name, description: description, address: address, latitude: lat, longitude: long  )
 end
 
 Product.delete_all
