@@ -16,7 +16,7 @@
 
 .idea/*
 /.idea/*
-
+.DS_Store
 Thumbs.db
 .idea/workspace.xml
 .idea/belvederedesign.iml
