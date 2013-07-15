@@ -16,7 +16,7 @@
 
 .idea/*
 /.idea/*
-/public/data/*
+
 Thumbs.db
 .idea/workspace.xml
 .idea/belvederedesign.iml
