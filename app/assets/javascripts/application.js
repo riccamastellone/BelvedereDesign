@@ -7,8 +7,11 @@ var map;
 
 $(function() {
     correggiAltezza();
-    if(window.location.hash) {
+    if(window.location.hash && $('.designers .container').size() > 0) {
         showDesigner(parseInt(window.location.hash.substring(1)));
+    }
+    if(window.location.hash && $('.prodotti .container').size() > 0) {
+        showCategoryList(parseInt(window.location.hash.substring(1)));
     }
     $('#cercaShowroom').click(function() {
         cercaShowroom();
@@ -168,6 +171,7 @@ function showDesigner(id) {
 
 
 function showCategoryList(id) {
+    window.location.hash = id;
     $('#loader').fadeIn("fast");   // Visualizziamo il loader
     $('.catlist h5').css("text-decoration",'none');     // Desottolineamo tutte le categorie
     $.get("/product/ajax/category/" + id,

@@ -35,7 +35,7 @@
       [<% if(!@precedente.blank?) %>
       <a href="/product/<%= @precedente[0].id %>">prodotto precedente</a> |
       <% end %>
-      <a href="/product">elenco</a>
+      <a href="/product#<%= @prodotto.categoria_id %>">elenco</a>
       <% if(!@successivo.blank?) %>
        | <a href="/product/<%= @successivo[0].id %>">prodotto successivo</a>
           <% end %>    ]
