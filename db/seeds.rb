@@ -183,32 +183,31 @@ product_images_list = [
     ["BaxterN.jpg", 3],
     ["BaxterB.jpg", 3],
     ["BaxterG.jpg", 3],
-    ["Gusto1.jpg", 4],
-    ["Gusto2.jpg", 4],
-    ["Bilbao2.jpg", 5],
-    ["BilbaoN.jpg", 5],
-    ["Nimbus1.jpg", 6],
-    ["Nimbus2.jpg", 6],
+    ["GustoA.jpg", 4],
+    ["GustoB.jpg", 4],
+    ["BilbaoA.jpg", 5],
+    ["BilbaoB.jpg", 5],
+    ["NimbusA.jpg", 6],
+    ["NimbusB.jpg", 6],
     ["FattoP.jpg", 7],
     ["FattoB.jpg", 7],
     ["FattoG.jpg", 7],
     ["FattoN.jpg", 7],
     ["FattoV.jpg", 7],
-    ["OplaN.jpg", 8],
-    ["OplaG.jpg", 8],
-    ["Pepper1.jpg", 9],
-    ["Agata1.jpg", 10],
-    ["Agata2.jpg", 10],
-    ["Agata3.jpg", 10],
-    ["Romeo1.jpg", 11],
-    ["Romeo2.jpg", 11],
-    ["Romeo3.jpg", 11],
+    ["OplaA.jpg", 8],
+    ["OplaB.jpg", 8],
+    ["PepperA.jpg", 9],
+    ["AgataA.jpg", 10],
+    ["AgataB.jpg", 10],
+    ["AgataC.jpg", 10],
+    ["Romeo.jpg", 11],
+    ["RomeoA.jpg", 11],
     ["Domus1.jpg", 12],
     ["Moon1.jpg", 13],
     ["Fast1.jpg", 14],
     ["Fast2.jpg", 14],
     ["Fast3.jpg", 14],
-    ["California1.jpg", 15],
+    ["California2.jpg", 15],
     ["Orbital1.jpg", 16],
     ["Orbital2.jpg", 16],
     ["Orbital3.jpg", 16],
@@ -230,3 +229,18 @@ product_images_list.each do |image_url, product_id|
   ProductImage.create( image_url: image_url, product_id: product_id )
 end
 
+
+News.delete_all
+news_list = [
+    ["17/04/2013 - Ultime novità e tendenze d'arredo dal Salone del Mobile 2013: per la zona notte,  letto Romeo", "Il Salone del Mobile di Milano ha visto la Belvedere Design presentare una serie di novità, sia per la Zona Giorno che per la Zona Notte.  Nuovi colori e finiture sono stati i protagonisti del recente Salone 2013. Sarà per l'atmosfera accogliente dell'ampio stand e delle ambientazioni, sarà perché era impossibile non notarla, ad attirare i visitatori in modo particolare è stato uno dei nostri ultimi letti. Stiamo parlando del modern Romeo, che ha riscosso un grande successo tra addetti ai lavori e pubblico. Il letto è caratterizzato da una lavorazione che ha richiesto estremi sforzi creativi ed artigianali. I frontali
+    sono stati curvati e modellati in modo tale da creare delle zone cave. L'effetto estetico complessivo è in realtà quello di una superficie frontale incisa da tagli irregolari, che creano inoltre un piacevole gioco di luci ed ombre sulla superficie del mobile."
+    ],
+    ["21/02/2012 – Belvedere Design è online con il nuovo sito, completamente rinnovato nella sua raffinata veste grafica", "Siamo lieti di annunciare la nascita del nuovo portale dedicato al mondo Belvedere: immagini in alta risoluzione unite ad una breve descrizione per farvi capire subito i punti di forza dei nostri prodotti. Una navigabilità facile ed intuitiva permette un'esperienza totale di tutti i nostri design. E’ infatti possibile trovare con estrema facilità ciò che si desidera.
+    Oltre hai prodotti, divisi per categorie, potrete trovare tutte le informazioni che desiderate riguardo ai nostri designer più importanti e ai nostri principali partners.
+    Qualora voleste recarvi presso uno dei nostri showroom, avete adesso la possibilità di cercare quello più vicino a voi. Se invece volete rimanere informati sul mondo Belvedere senza uscire di casa, la sezione “News & Events” è quello che fa per voi."
+    ]
+  ]
+
+news_list.each do |title, text|
+  News.create( title: title, text: text )
+end
