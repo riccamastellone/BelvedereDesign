@@ -31,8 +31,24 @@ designer_list = [
       È conosciuto nel settore come un artista pieno di talento avente un profondo rispetto per la tradizione. I suoi prodotti hanno ottenuto riconoscimenti internazionali e sono ammirati per la loro eleganza semplice e funzionale.
 
       Kipp Stewart vive a Carmel, in California, seppur dia credito ai suoi studi in Europa quali fonte ispiratrice grazie alla sua storia e alle classiche forme architettoniche. Fa spesso riferimento al defunto Charles Eames, con il quale ha lavorato in passato e che ha rappresentato per lui una notevole influenza. Stewart ha ricevuto numerosi riconoscimenti a livello internazionale. Kipp nutre una grande passione per le arti in genere, il che gli ha permesso di realizzare lavori nel campo della pittura, della fotografia, dell’architettura e del design della mobilia.
-       Il Ventana Inn, concepito architettonicamente e costruito in armonia con il paesaggio circostante del Big Sur, è il suo progetto architettonico di maggiore successo.
-      Le sue pitture sono state esposte in musei e gallerie d’arte nelle maggiori città americane, incluso il Museum of Modern Art di New York City.', 'Stewart-1.jpg' ]
+       Il Ventana Inn, concepito architettonicamente e costruito in armonia con il paesaggio circostante del Big Sur, è il suo progetto architettonico di maggiore successo.', 'Stewart-1.jpg'
+    ] ,
+    [ 'Carl Podolac', 'Alwy Visschedyk si aggiunge alla squadra di artisti della nostra azienda dando un notevole contributoi alla tradizione Belvedere che combina eleganza informale e forme classico moderne di design. Alwy ha stabilito la sua reputazioine quale creatore di arte funzionale grazie alla produzione di pezzi commissionati da clienti di rilevanza a livello mondiale.
+      Un pioniere nel campo di materiali e finiture per la mobilia, Alwy è stato tra i primi a realizzare pezzi d’arte con l’utilizzo di cemento. È un ottimo falegname e predilige particolarmente il tek, il marchio di fabbrica di Belvedere Design.
+
+      Nato in Olanda, Alwy è emigrato in Australia con la sua famiglia, passando i suoi anno formativi nella città di Rockingham, situata sull’Oceano Indiano. In questo ambiente marino costituito da baie incontaminate e isole deserte, ha nidificato la sua passione per la semplicità, la natura e gli spazi aperti.', 'Podolac1.jpg',
+    ] ,
+    [ 'Henrik Bowie',"Henrik Pedersen è una delle stelle nascenti dell'interior design. Uno dei suoi primi pezzi è stata la poltrona Imola per BoConcept, diventata un'icona, ed è uno dei maggiori designer danesi di lampade. Si è laureato come designer di moda nel 1990 ma utilizza la sua formazione per esplorare tutte le gamme del design. 'La mia formazione scolastica e la mia esperienza sono la mia scatola degli attrezzi. Midanno la base'. Il processo creativo è sempre lo stesso indipendentemente da cosa si crei. Sono i materiali che fanno la differenza e aprono nuove possibilità. La sua esperienza eclettica e il suo interesse per la matematica gli danno la capacità di intuire se un nuovo progetto funzionerà o meno. ",
+      'Bowie1.jpg' ,
+    ] ,
+    [ 'Tony Stark', "Uno dei più noti creativi dei nostri tempi, guru del design e al contempo serio progettista. Tony Stark, nato a Parigi nel 1949, dove ha anche studiato a metà degli anni 60, è rappresentante di un 'nuovo design' giocoso e non di rado provocante. Ciò ha portato all'elaborazione di idee classiche o anche moderne. I suoi progetti piuttosto che l'espressione di una ricerca ingegneristica del miglior funzionamento di una nuova idea o di un prodotto hanno un forte impatto visivo.
+        Il designer francese ha ideato oggetti che vanno dalla poltrona da caffetteria allo spazzolino da denti, dallo sgabello alla casa prefabbricata. Tony Stark si concentra sull'essenziale con forme elementari. Funzionamento chiaro ed effetto semplice. Nessun elemento di distrazione. Stile Belvedere, insomma.",
+      'Stark1.jpg',
+    ]  ,
+    [ 'Franco Previtali',"Nato a Milano nel 1964, laureato in design presso il Politecnico di Milano, ama lo stile raffinato e ricercato, ma senza esagerazioni. Il suo lavoro, che spazia dai pezzi unici alle edizioni limitate sino alla produzione di serie, non ha 'data di scadenza e fa parte delle collezioni sia pubbliche che private di tutto il mondo",
+      'Franco1.jpg'
+    ]
+
 ]
 
 designer_list.each do |name, description, image_url|
@@ -78,24 +94,24 @@ product_list = [
      "Poltrona girevole con pistone a gas originale e simpatica nel design senza rinunciare tuttavia all'eleganza;
      ideale per dare un tocco originale al tuo ufficio, alla sala d'aspetto o al tuo salotto!
      Comodissima e facilmente lavabile grazie al rivestimento in eco-pelle e la struttura in metallo cromato.",
-     1, 4],
+     5, 4],
     ["Nimbus",
      "Divano letto con materasso di serie spesso 14 cm. , con rivestimento interamente sfoerabile e quindi facilmente lavabile!
      I cuscini,visionabili in foto, sono forniti di serie in tessuto uguale al rivestimento della base del divano.
      I piedi sono in legno colore Wengé. Per trasformare il divano in letto è sufficiente una leggera trazione dello schienale, non c'è nulla da spostare lo schinale scompare sotto la rete.
      Lo schienale può contenere 2 guanciali, i braccioli sono montati con meccanismo a baionetta facilitandone la rimozione.",
-     2, 4],
+     6, 4],
     ["Fatto",
      "E' ideale per completare l'arredamento della tua camera, quella dei bambini, oppure  il salotto!
      Comodissima !
      Disponibile in vari colori!",
-     3, 4],
+     7, 4],
     ["Opla",
      "Divano in Vera Pelle. Comodissimo.
      Dalla linea semplice e confortevole, ideale in qualsiasi Ambiente.
      Interamente Made in Italy è il divano ideale se vuoi unire la Qualità ad un Prezzo Eccezionale!
      Spalliera e cuscini sfoderabili. Piedini cromati opzionali.",
-     4, 4],
+     8, 4],
     ["Pepper",
      "Letto matrimoniale con contenitore , testata imbottita dalla forma stondata, realizzato con struttura interamente sfoderabile e smontabile, completo di rete con doghe in legno.
      Disponibile in ecopelle e tessuto cotone 100%",
@@ -103,11 +119,11 @@ product_list = [
     ["Agata",
      "Letto imbottito, realizzato con struttura interamente sfoderabile e smontabile,completo di rete con doghe in legno;
      Ideale per la camera da letto classica e moderna, con la possibilità di sceglierlo in tante varianti di colore.",
-     2, 5],
+     3, 5],
     ["Romeo",
      "Il Letto è completamente sfoderabile, con rete ortopedica a doghe disponibile in 4 misure; il Contenitore è fornito di apertura pneumatica.
      Bello ed elegante si adatta perfettamente alla tua camera da letto; disponibile in tessuto 100% cotone e finitura in ecopelle che permette una facile manutenzione e pulizia.",
-     3, 5],
+     2, 5],
     ["Domus",
      "Cucina a Schema Lineare per parete di cm 270, Anta e Frontali in laminato stondato proposti in una vasta gamma di colori, di  strutture, piani, zoccolature e maniglie.
      Con la possibilità di variazioni ed inserimenti di Elettrodomestici REX diversi dalla proposta Standard.
@@ -119,17 +135,17 @@ product_list = [
      Con la possibilità di variazioni ed inserimenti di Elettrodomestici REX diversi dalla proposta Standard.
      Cucina Robustissima,  con cerniere ammortizzate, Spessori di Ante e
      Strutture e ferramenta derivata dalla serie Castom, tra le migliori sul mercato.",
-     1, 7],
+     5, 7],
     ["Fast",
      "Tavolo allungabile e raddoppiabile disponibile nella versione quadrata e rettangolare con struttura in metallo disponibile in diverse finiture, con piano in vetro temperato in quattro colori tendenza.
      E' il classico tavolino da cucina quadrato che , con apertura a libro, può ospitare più persone.",
-     2, 2],
+     6, 2],
      ["California",
       "Tavolo California, perfetto per essere posto in un salotto moderno ed elegante.",
-      3, 2],
+      7, 2],
      ["Orbital",
       "Il tavolo aperto permette di accogliere dieci posti a sedere. Orbital è una presenza scenica nel concerto domestico, il vero protagonista della zona pranzo.",
-      4, 2],
+      8, 2],
      ["Jesse",
       "Pedana e fianchi in rovere moro
       Moduli e vasistas in laccato lucido bianco, schiene opache bianche.",
@@ -145,10 +161,10 @@ product_list = [
       4, 1],
      ["Mood",
       "L'armadio battente in vero legno Mood è caratterizzato da ante in tamburato impiallacciate in vero legno. Questa tecnica costruttiva dona leggerezza e resistenza alle strutture, impreziosite e rese uniche dall'impiallacciatura in essenza di legno. L'armadio battente Mood può essere realizzato in vero legno naturale noce canaletto, in rovere moro, e nell'esclusivo olmo dalle raffinate finiture Perla e Brown. ",
-      1, 1],
+      7, 1],
      ["Vision",
      "Una soluzione arredativa funzionale ed elegante: l'amadio con spogliatoio terminale modello Vision, offre tutto quello che serve nella camera da letto contemporanea.Il mobile spogliatoio è completo di illuminazione interna con luci led ad accensione tramite sensore di presenza. A luci spente il particolare vetro applicato alle ante dello spogliatoio funge da specchi. Quando invece le luci vengono accese l'interno dello spogliatoio traspare attraverso le ante.",
-      2, 1],
+      8, 1],
 
 ]
 
@@ -167,32 +183,31 @@ product_images_list = [
     ["BaxterN.jpg", 3],
     ["BaxterB.jpg", 3],
     ["BaxterG.jpg", 3],
-    ["Gusto1.jpg", 4],
-    ["Gusto2.jpg", 4],
-    ["Bilbao2.jpg", 5],
-    ["BilbaoN.jpg", 5],
-    ["Nimbus1.jpg", 6],
-    ["Nimbus2.jpg", 6],
+    ["GustoA.jpg", 4],
+    ["GustoB.jpg", 4],
+    ["BilbaoA.jpg", 5],
+    ["BilbaoB.jpg", 5],
+    ["NimbusA.jpg", 6],
+    ["NimbusB.jpg", 6],
     ["FattoP.jpg", 7],
     ["FattoB.jpg", 7],
     ["FattoG.jpg", 7],
     ["FattoN.jpg", 7],
     ["FattoV.jpg", 7],
-    ["OplaN.jpg", 8],
-    ["OplaG.jpg", 8],
-    ["Pepper1.jpg", 9],
-    ["Agata1.jpg", 10],
-    ["Agata2.jpg", 10],
-    ["Agata3.jpg", 10],
-    ["Romeo1.jpg", 11],
-    ["Romeo2.jpg", 11],
-    ["Romeo3.jpg", 11],
+    ["OplaA.jpg", 8],
+    ["OplaB.jpg", 8],
+    ["PepperA.jpg", 9],
+    ["AgataA.jpg", 10],
+    ["AgataB.jpg", 10],
+    ["AgataC.jpg", 10],
+    ["Romeo.jpg", 11],
+    ["RomeoA.jpg", 11],
     ["Domus1.jpg", 12],
     ["Moon1.jpg", 13],
     ["Fast1.jpg", 14],
     ["Fast2.jpg", 14],
     ["Fast3.jpg", 14],
-    ["California1.jpg", 15],
+    ["California2.jpg", 15],
     ["Orbital1.jpg", 16],
     ["Orbital2.jpg", 16],
     ["Orbital3.jpg", 16],
@@ -214,3 +229,18 @@ product_images_list.each do |image_url, product_id|
   ProductImage.create( image_url: image_url, product_id: product_id )
 end
 
+
+News.delete_all
+news_list = [
+    ["17/04/2013 - Ultime novità e tendenze d'arredo dal Salone del Mobile 2013: per la zona notte,  letto Romeo", "Il Salone del Mobile di Milano ha visto la Belvedere Design presentare una serie di novità, sia per la Zona Giorno che per la Zona Notte.  Nuovi colori e finiture sono stati i protagonisti del recente Salone 2013. Sarà per l'atmosfera accogliente dell'ampio stand e delle ambientazioni, sarà perché era impossibile non notarla, ad attirare i visitatori in modo particolare è stato uno dei nostri ultimi letti. Stiamo parlando del modern Romeo, che ha riscosso un grande successo tra addetti ai lavori e pubblico. Il letto è caratterizzato da una lavorazione che ha richiesto estremi sforzi creativi ed artigianali. I frontali
+    sono stati curvati e modellati in modo tale da creare delle zone cave. L'effetto estetico complessivo è in realtà quello di una superficie frontale incisa da tagli irregolari, che creano inoltre un piacevole gioco di luci ed ombre sulla superficie del mobile."
+    ],
+    ["21/02/2012 – Belvedere Design è online con il nuovo sito, completamente rinnovato nella sua raffinata veste grafica", "Siamo lieti di annunciare la nascita del nuovo portale dedicato al mondo Belvedere: immagini in alta risoluzione unite ad una breve descrizione per farvi capire subito i punti di forza dei nostri prodotti. Una navigabilità facile ed intuitiva permette un'esperienza totale di tutti i nostri design. E’ infatti possibile trovare con estrema facilità ciò che si desidera.
+    Oltre hai prodotti, divisi per categorie, potrete trovare tutte le informazioni che desiderate riguardo ai nostri designer più importanti e ai nostri principali partners.
+    Qualora voleste recarvi presso uno dei nostri showroom, avete adesso la possibilità di cercare quello più vicino a voi. Se invece volete rimanere informati sul mondo Belvedere senza uscire di casa, la sezione “News & Events” è quello che fa per voi."
+    ]
+  ]
+
+news_list.each do |title, text|
+  News.create( title: title, text: text )
+end

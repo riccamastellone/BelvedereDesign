@@ -14,21 +14,7 @@
 /log/*.log
 /tmp
 
-.idea/*
-/.idea/*
+.idea/
+
 .DS_Store
 Thumbs.db
-.idea/workspace.xml
-.idea/belvederedesign.iml
-
-.idea/.generators
-
-*.xml
-
-*.xml
-
-.idea/misc.xml
-
-.idea/modules.xml
-
-.idea/modules.xml
