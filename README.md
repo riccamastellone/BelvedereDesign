@@ -1,4 +1,4 @@
-=Belvedere Design
+## Belvedere Design
 
 Progetto Ruby on Rails sviluppato per il corso di Hypermedia Application 2013 al Politecnico di Milano.
 
